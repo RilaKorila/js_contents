@@ -1,4 +1,4 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es2021": true
@@ -18,6 +18,6 @@ module.exports = {
     "rules": {
         "quotes": ["error", "double"],
         "semi-spacing": ["warn", {"before": false, "after": true}],
-        "conma-spacing": ["warn", {"before": false, "after": true}]
+        "comma-spacing": ["warn", {"before": false, "after": true}]
     }
-};
+}
