@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <title>js_contents</title>
-    <script src='js/slideShow.js'></script>
-    <script src='js/uranai.js'></script>
-    <script src='js/showDataTime.js'></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <title>js_contents</title>
+        <script src="js/slideShow.js"></script>
+        <script src="js/uranai.js"></script>
+        <script src="js/showDataTime.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-  <body>
-    <header>
-      <div class="show-time">
-        <p>ただいまの時刻：<span id="clock"></span></p>
-      </div>
-    </header>
-    <div class='slide-show'>
-      <h2>スライドショー</h2>
-      <img src="imgs/fruits.png" id="slide_img"/>
-    </div>
+    <body>
+        <header>
+            <div class="show-time">
+                <p>ただいまの時刻：<span id="clock"></span></p>
+            </div>
+        </header>
+        <div class="slide-show">
+            <h2>スライドショー</h2>
+            <img src="imgs/fruits.png" id="slide_img" />
+            <input
+                id="slide-btn"
+                type="button"
+                value="start/stop"
+                onclick="startStop()"
+            />
+        </div>
 
-    <div class="uranai">
-      <h2>占い</h2>
-      <input id="uranai_btn" type="button" value="占いをする" onclick="uranai()">
-      <p id="uranai_result"></p>
-    </div>
-
-  </body>
+        <div class="uranai">
+            <h2>占い</h2>
+            <input
+                id="uranai_btn"
+                type="button"
+                value="占いをする"
+                onclick="uranai()"
+            />
+            <p id="uranai_result"></p>
+        </div>
+    </body>
 </html>
