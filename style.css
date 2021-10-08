@@ -12,3 +12,8 @@ body{
     height: 300px;
     margin: 50px;
 }
+
+/* 占い */
+.uranai{
+    text-align: center;
+}
