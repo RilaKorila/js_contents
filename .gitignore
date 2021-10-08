@@ -7,3 +7,9 @@ package.json
 # Ignore artifacts:
 build
 coverage
+
+# memo
+memo.txt
+
+# imgs
+/imgs/
