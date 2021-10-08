@@ -1,10 +1,27 @@
-body{
-    margin: 30px
+/* header 時間の表示 */
+header{
+    margin-top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: darkcyan;
+    color: whitesmoke;
+}    
+
+
+.show-time{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.show-time p{
+    margin: auto 30px;
+    line-height: 50px;
 }
 
 /* スライドショー */
 .slide-show{
     text-align: center;
+    margin-top: 30px auto;
 }
 
 .slide-show img{
@@ -16,4 +33,5 @@ body{
 /* 占い */
 .uranai{
     text-align: center;
+    margin-top: 30px;
 }
