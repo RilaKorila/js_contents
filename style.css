@@ -45,3 +45,36 @@ header {
     text-align: center;
     margin-top: 30px;
 }
+
+/* カレンダー */
+.calendar {
+    max-width: 600px;
+    text-align: center;
+    margin: 30px auto 0;
+    color: #666;
+}
+
+.calendar-header {
+    display: flex;
+}
+
+.calendar-header input {
+    background-color: blanchedalmond;
+}
+
+.calendar table {
+    margin: 0 auto;
+}
+
+.calendar td:first-child {
+    color: red;
+}
+
+.calendar td:last-child {
+    color: royalblue;
+}
+
+#calendar-main {
+    text-align: center;
+    width: 100%;
+}

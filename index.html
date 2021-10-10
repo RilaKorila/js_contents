@@ -6,6 +6,7 @@
         <script src="js/slideShow.js"></script>
         <script src="js/uranai.js"></script>
         <script src="js/showDataTime.js"></script>
+        <script src="js/calendar.js"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
 
@@ -35,6 +36,17 @@
                 onclick="uranai()"
             />
             <p id="uranai_result"></p>
+        </div>
+
+        <div class="calendar">
+            <h2>カレンダー</h2>
+            <!-- ボタンクリックで月移動 -->
+            <div id="next-prev-btn">
+                <input id="prev_btn" type="button" value="prev" />
+                <input id="next_btn" type="button" value="next" />
+            </div>
+            <!-- カレンダー -->
+            <div id="calendar-main"></div>
         </div>
     </body>
 </html>

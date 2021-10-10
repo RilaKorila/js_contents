@@ -2,7 +2,5 @@
     "trailingComma": "es5",
     "tabWidth": 4,
     "semi": false,
-    "DoubleQuote": true,
-    "jsxDoubleQuote": true,
     "jsxBracketSameLine": true
 }
