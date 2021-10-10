@@ -3,6 +3,10 @@ const today = new Date()
 var year = today.getFullYear()
 var month = today.getMonth() + 1
 
+function creatCalendarTitle(year, month){
+    return year + "/" + month;
+}
+
 function creatCalendar(year, month) {
     // 月の最初の日を取得
     const firstDate = new Date(year, month - 1, 1)
@@ -15,12 +19,6 @@ function creatCalendar(year, month) {
     var dayCount = 1
     // HTML要素を格納する変数
     var calendarHtml = ""
-
-    // calendarHtml += "<div class='calendar-header'>";
-    // calendarHtml += "<input id='prev_btn' type='button' value='prev' />"
-    calendarHtml += "<h3>" + year + "/" + month + "</h3>"
-    // calendarHtml += "<input id='next_btn' type='button' value='next' />"
-    // calendarHtml += "</div>"
 
     calendarHtml += "<table>"
 
@@ -53,32 +51,35 @@ function creatCalendar(year, month) {
 
 // DOM要素をとるのは、<body>の中身が読まれた後でないといけない
 window.onload = function () {
-    const next = document.getElementById("next_btn")
+    const next = document.getElementById("next-btn")
     next.addEventListener("click", function () {
         month++
         if (month > 12) {
             year++
             month = 1
         }
+        document.getElementById("calendar-title").textContent = creatCalendarTitle (year, month);
         document.querySelector("#calendar-main").innerHTML = creatCalendar(
             year,
             month
         )
     })
 
-    const prev = document.getElementById("prev_btn")
+    const prev = document.getElementById("prev-btn")
     prev.addEventListener("click", function () {
         month--
         if (month < 1) {
             year--
             month = 12
         }
+        document.getElementById("calendar-title").textContent = creatCalendarTitle (year, month);
         document.querySelector("#calendar-main").innerHTML = creatCalendar(
             year,
             month
         )
     })
 
+    document.getElementById("calendar-title").textContent = creatCalendarTitle (year, month);
     document.querySelector("#calendar-main").innerHTML = creatCalendar(
         year,
         month

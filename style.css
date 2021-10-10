@@ -47,6 +47,7 @@ header {
 }
 
 /* カレンダー */
+/*  */
 .calendar {
     max-width: 600px;
     text-align: center;
@@ -55,15 +56,42 @@ header {
 }
 
 .calendar-header {
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.calendar-header input {
-    background-color: blanchedalmond;
+.calendar-header input{
+    background-color: transparent;
+    margin:  0 30px;
+    width:  30px;
+}
+
+#next-btn {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #d4b361;
+}
+
+#prev-btn{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 26.0px 15px 0;
+    border-color: transparent #d4b361 transparent transparent;    
 }
 
 .calendar table {
     margin: 0 auto;
+}
+
+.calendar td{
+    /* tdにサイズを持たせることで、カレンダーの行数が変わってもサイズが固定 */
+    width: 30px;
+    height: 20px;
 }
 
 .calendar td:first-child {
