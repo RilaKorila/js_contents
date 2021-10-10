@@ -25,10 +25,13 @@ function slide_time() {
 
 function startStop() {
     if (isMovingSldeShow) {
-        document.getElementById("slide_img").value = "stop"
+        isMovingSldeShow = false
+        document.getElementById("slide-btn").value = "stop"
         timerID = setInterval(slide_time, 3000)
     } else {
-        document.getElementById("slide_img").value = "start"
+        isMovingSldeShow = true
+        document.getElementById("slide-btn").value = "start"
         clearInterval(timerID)
     }
 }
+document.getElementById("slide-btn").onclick = startStop
