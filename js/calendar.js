@@ -3,8 +3,8 @@ const today = new Date()
 var year = today.getFullYear()
 var month = today.getMonth() + 1
 
-function creatCalendarTitle(year, month){
-    return year + "/" + month;
+function creatCalendarTitle(year, month) {
+    return year + "/" + month
 }
 
 function creatCalendar(year, month) {
@@ -58,7 +58,8 @@ window.onload = function () {
             year++
             month = 1
         }
-        document.getElementById("calendar-title").textContent = creatCalendarTitle (year, month);
+        document.getElementById("calendar-title").textContent =
+            creatCalendarTitle(year, month)
         document.querySelector("#calendar-main").innerHTML = creatCalendar(
             year,
             month
@@ -72,14 +73,18 @@ window.onload = function () {
             year--
             month = 12
         }
-        document.getElementById("calendar-title").textContent = creatCalendarTitle (year, month);
+        document.getElementById("calendar-title").textContent =
+            creatCalendarTitle(year, month)
         document.querySelector("#calendar-main").innerHTML = creatCalendar(
             year,
             month
         )
     })
 
-    document.getElementById("calendar-title").textContent = creatCalendarTitle (year, month);
+    document.getElementById("calendar-title").textContent = creatCalendarTitle(
+        year,
+        month
+    )
     document.querySelector("#calendar-main").innerHTML = creatCalendar(
         year,
         month

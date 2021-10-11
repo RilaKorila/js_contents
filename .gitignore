@@ -13,3 +13,6 @@ memo.txt
 
 # imgs
 /imgs/
+
+# constants
+js/constants.js

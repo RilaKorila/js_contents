@@ -62,33 +62,33 @@ header {
     align-items: center;
 }
 
-.calendar-header input{
+.calendar-header input {
     background-color: transparent;
-    margin:  0 30px;
-    width:  30px;
+    margin: 0 30px;
+    width: 30px;
 }
 
 #next-btn {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 15px 0 15px 26.0px;
+    border-width: 15px 0 15px 26px;
     border-color: transparent transparent transparent #d4b361;
 }
 
-#prev-btn{
+#prev-btn {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 15px 26.0px 15px 0;
-    border-color: transparent #d4b361 transparent transparent;    
+    border-width: 15px 26px 15px 0;
+    border-color: transparent #d4b361 transparent transparent;
 }
 
 .calendar table {
     margin: 0 auto;
 }
 
-.calendar td{
+.calendar td {
     /* tdにサイズを持たせることで、カレンダーの行数が変わってもサイズが固定 */
     width: 30px;
     height: 20px;
@@ -105,4 +105,25 @@ header {
 #calendar-main {
     text-align: center;
     width: 100%;
+}
+
+/* お天気 */
+/* (TODO)表の中に罫線がひけない(=td, thにborderがかからない) */
+.weather {
+    text-align: center;
+    color: #666;
+}
+
+.weather table {
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+    /* 表の外側にわく */
+    border: solid 1px black;
+}
+
+.weather th {
+    padding: 5px;
+    width: 20%;
+    background: #fff5e5; /*背景色*/
 }
