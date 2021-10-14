@@ -8,13 +8,6 @@ HTML&CSS で作成した静的なホームページに、JavaScrpt を使って�
 
 -   prettier も導入。ただ、コマンドライン`npx prettier --write <filename/dirname>`からしか今は実行できない状態。VSCode のパッケージをうまく設定して、保存したら自動的に Prettier がきくようにしたい
 
-## 学習内容
-
--   スライドショー
-    -   反復, 分岐
--   占い
-    -   分岐
-    -   ボタンで動作
 
 ## 直したい
 
