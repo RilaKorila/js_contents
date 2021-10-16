@@ -6,7 +6,6 @@
         <script src="js/slideShow.js"></script>
         <script src="js/uranai.js"></script>
         <script src="js/showDataTime.js"></script>
-        <script src="js/calendar.js"></script>
         <script src="js/weather.js"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -20,18 +19,12 @@
         <div class="slide-show">
             <h2>スライドショー</h2>
             <img src="imgs/fruits.png" id="slide_img" />
-            <a 
-            class="btn"
-            id="slide-btn"
-                onclick="startStop()">start</a>
+            <a class="btn" id="slide-btn" onclick="startStop()">start</a>
         </div>
 
         <div class="uranai">
             <h2>占い</h2>
-            <a 
-            class="btn"
-                id="uranai_btn"
-                onclick="uranai()">占う</a>
+            <a class="btn" id="uranai_btn" onclick="uranai()">占う</a>
             <p id="uranai_result"></p>
         </div>
 
@@ -46,6 +39,10 @@
             <!-- カレンダー -->
             <div id="calendar-main"></div>
         </div>
+        <!-- calendar.jsの読み込み -->
+        <script src="js/calendar.js">
+            drawCalendar(year, month);
+        </script>
 
         <div class="weather">
             <h2>お天気</h2>

@@ -49,11 +49,13 @@ function creatCalendar(year, month) {
     return calendarHtml
 }
 
-function drawCalendar(year, month){
+function drawCalendar(year, month) {
     console.log("drawCalendar")
-    document.getElementById("#calendar-title").textContent =
-        creatCalendarTitle(year, month)
-    document.querySelector("#calendar-main").innerHTML = creatCalendar(
+    document.getElementById("calendar-title").textContent = creatCalendarTitle(
+        year,
+        month
+    )
+    document.querySelector("calendar-main").innerHTML = creatCalendar(
         year,
         month
     )
@@ -77,8 +79,6 @@ function prev() {
     drawCalendar(year, month)
 }
 
+console.log("onload")
+// drawCalendar(year, month)
 // DOM要素をとるのは、<body>の中身が読まれた後でないといけない
-window.onload = function(){
-    console.log("onload")
-    drawCalendar(year, month);
-};
