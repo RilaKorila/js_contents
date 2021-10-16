@@ -152,5 +152,36 @@
                 colBtn3.style.backgroundColor = rndCol
             }
         </script>
+
+        <!-- フォーム -->
+        <form>
+            <div>
+                <label for="fname">First name: </label>
+                <input id="fname" type="text" />
+            </div>
+            <div>
+                <label for="lname">Last name: </label>
+                <input id="lname" type="text" />
+            </div>
+            <div>
+                <input id="submit" type="submit" />
+            </div>
+        </form>
+        <p></p>
+
+        <script>
+            const form = document.querySelector("form")
+            const fname = document.getElementById("fname")
+            const lname = document.getElementById("lname")
+            const para = document.querySelector("p")
+
+            form.onsubmit = function (e) {
+                if (fname.value === "" || lname.value === "") {
+                    // もし空なら
+                    e.preventDefault() // フォームの送信を抑制
+                    para.textContent = "You need to fill in both names!"
+                }
+            }
+        </script>
     </body>
 </html>
