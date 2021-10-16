@@ -20,22 +20,18 @@
         <div class="slide-show">
             <h2>スライドショー</h2>
             <img src="imgs/fruits.png" id="slide_img" />
-            <input
-                id="slide-btn"
-                type="button"
-                value="start"
-                onclick="startStop()"
-            />
+            <a 
+            class="btn"
+            id="slide-btn"
+                onclick="startStop()">start</a>
         </div>
 
         <div class="uranai">
             <h2>占い</h2>
-            <input
+            <a 
+            class="btn"
                 id="uranai_btn"
-                type="button"
-                value="占いをする"
-                onclick="uranai()"
-            />
+                onclick="uranai()">占う</a>
             <p id="uranai_result"></p>
         </div>
 
@@ -43,9 +39,9 @@
             <h2>カレンダー</h2>
             <!-- ボタンクリックで月移動 -->
             <div class="calendar-header">
-                <input id="prev-btn" type="button" />
+                <a id="prev-btn" onclick="prev()"></a>
                 <h2 id="calendar-title"></h2>
-                <input id="next-btn" type="button" />
+                <a id="next-btn" onclick="next()"></a>
             </div>
             <!-- カレンダー -->
             <div id="calendar-main"></div>

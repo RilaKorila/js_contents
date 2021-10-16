@@ -1,3 +1,14 @@
+/* ボタン共通 */
+.btn{
+    display: inline-block;
+    width: 70px;
+    line-height: 30px;
+    cursor: pointer;
+    background-color: aquamarine;
+    border: 1px #eee solid;
+    border-radius: 4px;
+}
+
 /* header 時間の表示 */
 header {
     margin-top: 0;
@@ -25,19 +36,10 @@ header {
 }
 
 .slide-show img {
+    display: block;
     width: 300px;
     height: 300px;
-    margin: 20px;
-}
-.slide-show input {
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-    line-height: 30px;
-    width: 50px;
-    background-color: aquamarine;
-    border: 1px #eee solid;
-    border-radius: 4px;
+    margin: 10px auto;
 }
 
 /* 占い */
@@ -62,7 +64,7 @@ header {
     align-items: center;
 }
 
-.calendar-header input {
+.calendar-header a {
     background-color: transparent;
     margin: 0 30px;
     width: 30px;

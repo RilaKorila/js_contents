@@ -49,44 +49,36 @@ function creatCalendar(year, month) {
     return calendarHtml
 }
 
-// DOM要素をとるのは、<body>の中身が読まれた後でないといけない
-window.onload = function () {
-    const next = document.getElementById("next-btn")
-    next.addEventListener("click", function () {
-        month++
-        if (month > 12) {
-            year++
-            month = 1
-        }
-        document.getElementById("calendar-title").textContent =
-            creatCalendarTitle(year, month)
-        document.querySelector("#calendar-main").innerHTML = creatCalendar(
-            year,
-            month
-        )
-    })
-
-    const prev = document.getElementById("prev-btn")
-    prev.addEventListener("click", function () {
-        month--
-        if (month < 1) {
-            year--
-            month = 12
-        }
-        document.getElementById("calendar-title").textContent =
-            creatCalendarTitle(year, month)
-        document.querySelector("#calendar-main").innerHTML = creatCalendar(
-            year,
-            month
-        )
-    })
-
-    document.getElementById("calendar-title").textContent = creatCalendarTitle(
-        year,
-        month
-    )
+function drawCalendar(year, month){
+    console.log("drawCalendar")
+    document.getElementById("#calendar-title").textContent =
+        creatCalendarTitle(year, month)
     document.querySelector("#calendar-main").innerHTML = creatCalendar(
         year,
         month
     )
 }
+
+function next() {
+    month++
+    if (month > 12) {
+        year++
+        month = 1
+    }
+    drawCalendar(year, month)
+}
+
+function prev() {
+    month--
+    if (month < 1) {
+        year--
+        month = 12
+    }
+    drawCalendar(year, month)
+}
+
+// DOM要素をとるのは、<body>の中身が読まれた後でないといけない
+window.onload = function(){
+    console.log("onload")
+    drawCalendar(year, month);
+};

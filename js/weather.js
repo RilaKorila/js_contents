@@ -18,7 +18,7 @@ window.onload = function () {
             return response.json()
         })
         .then(function (weather) {
-            console.log(weather)
+            // console.log(weather)
             // 画面に書き出す
             document.getElementById("publishingOffice").textContent =
                 weather.publishingOffice
@@ -40,7 +40,7 @@ window.onload = function () {
         })
         .then(function (weather) {
             var tokyo = weather[0].timeSeries[0].areas[0]
-            console.log(tokyo.weathers)
+            // console.log(tokyo.weathers)
             // tokyo.weathers: [今日, 明日, 明後日]の天気
             // tokyo.winds: [今日, 明日, 明後日]の風向き
             // tokyo.waves: [今日, 明日, 明後日]の風速
