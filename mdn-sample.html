@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Function start</title>
+        <style>
+            .msgBox {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 242px;
+                background: #eee;
+            }
+
+            .msgBox p {
+                line-height: 1.5;
+                padding: 10px 20px;
+                color: #333;
+                padding-left: 82px;
+                background-position: 25px center;
+                background-repeat: no-repeat;
+            }
+
+            .msgBox button {
+                background: none;
+                border: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 1.1rem;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <button>Display message box</button>
+
+        <script>
+            function displayMessage(msgText, msgType) {
+                const html = document.querySelector("html")
+                const panel = document.createElement("div")
+                panel.setAttribute("class", "msgBox")
+                html.appendChild(panel)
+
+                const msg = document.createElement("p")
+                msg.textContent = msgText
+                panel.appendChild(msg)
+
+                const closeBtn = document.createElement("button")
+                closeBtn.textContent = "x"
+                panel.appendChild(closeBtn)
+
+                closeBtn.onclick = function () {
+                    // ボタンの削除
+                    // panelごと削除
+                    // removeChildが子要素対象なのでカット
+                    // panel.parentNode.removeChild(panel)
+                    html.removeChild(panel)
+                }
+
+                if (msgType === "warning") {
+                    msg.style.backgroundImage = "url(imgs/warning.png)"
+                    panel.style.backgroundColor = "red"
+                } else if (msgType === "chat") {
+                    msg.style.backgroundImage = "url(imgs/chat.png)"
+                    panel.style.backgroundColor = "aqua"
+                } else {
+                    msg.style.paddingLeft = "20px"
+                }
+            }
+            const btn = document.querySelector("button")
+            // ↓これだと、loadと同時にdisplayMessage関数を呼び出してしまう
+            // （）は「関数呼び出し演算子」と言われる
+            // btn.onclick = displayMessage();
+            // btn.onclick = displayMessage;
+            // 上記の例と同じように、引数がある関数は、
+            // 無名関数にして呼び出すことで、ボタンを押した時のみ実行される
+            btn.onclick = function () {
+                //   displayMessage('Woo, this is a different message!');
+                displayMessage(
+                    "Your inbox is almost full — delete some mails",
+                    "warning"
+                )
+            }
+        </script>
+
+        <!-- 背景色が変わるボタン -->
+        <button id="colBtn">Change Color</button>
+        <script>
+            const colBtn = document.querySelector("#colBtn")
+            function random(num) {
+                return Math.floor(Math.random() * (num + 1))
+            }
+
+            colBtn.onclick = function () {
+                const rndCol =
+                    "rgb(" +
+                    random(255) +
+                    "," +
+                    random(255) +
+                    "," +
+                    random(255) +
+                    ")"
+                document.body.style.backgroundColor = rndCol
+            }
+            // colBtn.addEventListener("click", 関数名)
+        </script>
+
+        <!-- ボタンの色を変える -->
+        <button id="colBtn2">Change Color</button>
+        <script>
+            const colBtn2 = document.querySelector("#colBtn2")
+            function random(num) {
+                return Math.floor(Math.random() * (num + 1))
+            }
+
+            // eはイベントオブジェクト
+            // = e.targetは常に、イベントが発火した物体を指す(今回はcolBtn2)
+            function changeBtnColor(e) {
+                const rndCol =
+                    "rgb(" +
+                    random(255) +
+                    "," +
+                    random(255) +
+                    "," +
+                    random(255) +
+                    ")"
+                e.target.style.backgroundColor = rndCol
+            }
+            colBtn2.addEventListener("click", changeBtnColor)
+        </script>
+
+        <!-- addEventListenerなしver: ボタンの色を変える -->
+        <button id="colBtn3">Change Color</button>
+        <script>
+            const colBtn3 = document.querySelector("#colBtn3")
+            function random(num) {
+                return Math.floor(Math.random() * (num + 1))
+            }
+            // eはイベントオブジェクト
+            // = e.targetは常に、イベントが発火した物体を指す(今回はcolBtn3)
+            colBtn3.onclick = function () {
+                const rndCol =
+                    "rgb(" +
+                    random(255) +
+                    "," +
+                    random(255) +
+                    "," +
+                    random(255) +
+                    ")"
+                colBtn3.style.backgroundColor = rndCol
+            }
+        </script>
+    </body>
+</html>
