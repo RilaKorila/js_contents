@@ -129,3 +129,67 @@ header {
     width: 20%;
     background: #fff5e5; /*背景色*/
 }
+
+/* アナログ時計 */
+.clock-container {
+    display: flex;
+    /* flexアイテムを積み重ねるように配置 */
+    flex-direction: column;
+    /* 各アイテムを均等に配置し
+     最初のアイテムは先頭に寄せ、
+     最後のアイテムは末尾に寄せる */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    /* 時計の外枠 */
+    width: 200px;
+    height: 200px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+.needle {
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    /* 要素の変形transformにおける原点を設定 */
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+}
+
+.needle#hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle#minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+.center-point {
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+/* 疑似クラス */
+/* .center-point::after {
+    content: "";
+    background-color: black;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+} */

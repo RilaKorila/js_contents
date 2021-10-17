@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>slide_show</title>
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <div class="show-time">
+            <p id="now"></p>
+        </div>
+
+        <div class="show-date">
+            <p id="today"></p>
+        </div>
+
+        <script>
+            var currentTime = new Date()
+
+            function showTime() {
+                var currentHour = currentTime.getHours()
+                var currentMinutes = currentTime.getMinutes()
+
+                var timeInfo =
+                    "ただいまの時間：" +
+                    currentHour +
+                    "時" +
+                    currentMinutes +
+                    "分"
+                document.getElementById("now").innerHTML = timeInfo
+            }
+
+            function showDate() {
+                var currentYear = currentTime.getFullYear()
+                var currentMonth = currentTime.getMonth()
+                var currentDate = currentTime.getDate()
+                var currentDay = currentTime.getDay()
+                const weeks = ["日", "月", "火", "水", "木", "金", "土"]
+
+                var todayInfo =
+                    "今日：" +
+                    currentYear +
+                    "月" +
+                    currentMonth +
+                    "月" +
+                    currentDate +
+                    "日 (" +
+                    weeks[currentDay] +
+                    ")"
+                document.getElementById("today").innerHTML = todayInfo
+            }
+            showTime()
+            showDate()
+            setInterval(showTime, 1000)
+        </script>
+
+        <!-- アナログ時計 -->
+        <div class="clock-container">
+            <div class="clock">
+                <div class="needle" id="hour"></div>
+                <div class="needle" id="minute"></div>
+                <div class="center-point"></div>
+            </div>
+        </div>
+
+        <script>
+            // 要素を取得する
+            const hourEl = document.getElementById("hour")
+            const minuteEl = document.getElementById("minute")
+
+            function setTime() {
+                // 日時取得
+                const time = new Date()
+                const hours = time.getHours()
+                const hoursForClock = hours >= 13 ? hours % 12 : hours
+                const minutes = time.getMinutes()
+                const ampm = hours >= 12 ? "PM" : "AM"
+
+                // 日時の設定
+                hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+                    hoursForClock,
+                    0,
+                    11,
+                    0,
+                    360
+                )}deg)`
+                minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+                    minutes,
+                    0,
+                    59,
+                    0,
+                    360
+                )}deg)`
+            }
+
+            // StackOverflow https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+            const scale = (num, in_min, in_max, out_min, out_max) => {
+                return (
+                    ((num - in_min) * (out_max - out_min)) / (in_max - in_min) +
+                    out_min
+                )
+            }
+
+            // 日付をセット
+            setTime()
+
+            // 時計の針を動かす
+            setInterval(setTime, 1000)
+        </script>
+    </body>
+</html>
