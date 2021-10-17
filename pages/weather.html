@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>slide_show</title>
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+    <body>
+        <div class="weather">
+            <h2>お天気</h2>
+            <div class="summary">
+                <h3>東京の概要</h3>
+                <table>
+                    <tr>
+                        <th>発表者</th>
+                        <td id="publishingOffice"></td>
+                    </tr>
+                    <tr>
+                        <th>報告日時</th>
+                        <td id="reportDatetime"></td>
+                    </tr>
+                    <tr>
+                        <th>対象地域</th>
+                        <td id="targetArea"></td>
+                    </tr>
+                    <tr>
+                        <th>ヘッドライン</th>
+                        <td id="headlineText"></td>
+                    </tr>
+                    <tr>
+                        <th>詳細</th>
+                        <td id="text"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="forecast">
+                <h3>明日の東京</h3>
+                <table>
+                    <tr>
+                        <th>今日</th>
+                        <td id="today"></td>
+                    </tr>
+                    <tr>
+                        <th>明日</th>
+                        <td id="tomorrow"></td>
+                    </tr>
+                    <tr>
+                        <th>明後日</th>
+                        <td id="dayAfterTomorrow"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const WEATHER_SUMMARY =
+            "https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json"
+
+        // JSONのリンク先を表示した状態で、dev tool → Network → JSON選択 → 推薦されるformattedを選択で見やすくなる
+        // (TODO) 使うなら、指定の仕方を解説で入れておく
+        const WEATHER_FORECAST =
+            "https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json"
+
+        fetch(WEATHER_SUMMARY)
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (weather) {
+                document.getElementById("publishingOffice").textContent =
+                    weather.publishingOffice
+                document.getElementById("reportDatetime").textContent =
+                    weather.reportDatetime
+                document.getElementById("targetArea").textContent =
+                    weather.targetArea
+                document.getElementById("headlineText").textContent =
+                    weather.headlineText
+                document.getElementById("text").innerHTML =
+                    weather.text.replace(/\n\n/g, "<br/>")
+            })
+
+        fetch(WEATHER_FORECAST)
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (weather) {
+                var tokyo = weather[0].timeSeries[0].areas[0]
+                // tokyo.weathers: [今日, 明日, 明後日]の天気
+                // tokyo.winds: [今日, 明日, 明後日]の風向き
+                // tokyo.waves: [今日, 明日, 明後日]の風速
+
+                // 画面に書き出す
+                document.getElementById("today").textContent = tokyo.weathers[0]
+                document.getElementById("tomorrow").textContent =
+                    tokyo.weathers[1]
+                document.getElementById("dayAfterTomorrow").textContent =
+                    tokyo.weathers[2]
+            })
+    </script>
+</html>

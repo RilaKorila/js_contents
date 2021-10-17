@@ -23,3 +23,4 @@ HTML&CSS で作成した静的なホームページに、JavaScrpt を使って�
 ## 注意点
 
 -   window.onload イベントを複数記述した場合、最後のもののみ実行される
+-   QuerySelector で呼び出した要素にたいして、textContent は作用しない

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>slide_show</title>
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <div class="slide-show">
+            <h2>スライドショー</h2>
+            <img id="main-img" src="../imgs/fruits.png" />
+            <a class="btn" id="start-btn">start</a>
+            <a class="btn" id="stop-btn">stop</a>
+        </div>
+        <script>
+            const new_img_list = [
+                "../imgs/apple.png",
+                "../imgs/banana.png",
+                "../imgs/orange.png",
+                "../imgs/cherry.png",
+            ]
+
+            function slide_time() {
+                var num = Math.floor(Math.random() * new_img_list.length)
+                document
+                    .getElementById("main-img")
+                    .setAttribute("src", new_img_list[num])
+            }
+            // setInterval(slide_time, 1000)
+            const startBtn = document.getElementById("start-btn")
+            const stopBtn = document.getElementById("stop-btn")
+            var timerID
+
+            function startSlide() {
+                console.log("start")
+                timerID = setInterval(slide_time, 3000)
+            }
+            function stopSlide() {
+                console.log("stop")
+                clearInterval(timerID)
+            }
+
+            startBtn.onclick = startSlide
+            stopBtn.onclick = stopSlide
+        </script>
+        <!-- <script src="../js/slideShow.js"></script> -->
+    </body>
+</html>
