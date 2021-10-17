@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>slide_show</title>
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <div class="uranai">
+            <h2>占い</h2>
+            <a class="btn" id="uranai_btn">占う</a>
+            <p id="uranai_result"></p>
+        </div>
+    </body>
+
+    <script>
+        function uranai() {
+            var fortune_num = Math.floor(Math.random() * 4)
+
+            var resultText
+            if (fortune_num === 0) {
+                resultText = "大吉"
+            } else if (fortune_num === 1) {
+                resultText = "中吉"
+            } else if (fortune_num === 2) {
+                resultText = "小吉"
+            } else {
+                resultText = "吉"
+            }
+
+            document.getElementById("uranai_result").textContent = resultText
+        }
+
+        const uranaiBtn = document.getElementById("uranai_btn")
+        uranaiBtn.onclick = uranai
+    </script>
+</html>
