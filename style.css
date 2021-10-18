@@ -109,6 +109,10 @@ header {
     width: 100%;
 }
 
+.calendar td#today {
+    color: green;
+}
+
 /* お天気 */
 /* (TODO)表の中に罫線がひけない(=td, thにborderがかからない) */
 .weather {
