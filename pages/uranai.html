@@ -12,6 +12,13 @@
             <a class="btn" id="uranai_btn">占う</a>
             <p id="uranai_result"></p>
         </div>
+
+        <!-- ラッキーアイテム: 画像を表示 -->
+        <div class="lucky">
+            <h2>ラッキーアイテム</h2>
+            <a class="btn" id="lucky_btn">占う</a>
+            <img src="../imgs/onpu.png" id="lucky_img" />
+        </div>
     </body>
 
     <script>
@@ -34,5 +41,22 @@
 
         const uranaiBtn = document.getElementById("uranai_btn")
         uranaiBtn.onclick = uranai
+
+        function lucky() {
+            var fortune_num = Math.floor(Math.random() * 4)
+            const resultImg = document.getElementById("lucky_img")
+
+            if (fortune_num === 0) {
+                resultImg.setAttribute("src", "../imgs/pen.png")
+            } else if (fortune_num === 1) {
+                resultImg.setAttribute("src", "../imgs/ramen.png")
+            } else if (fortune_num === 2) {
+                resultImg.setAttribute("src", "../imgs/cherry.png")
+            } else {
+                resultImg.setAttribute("src", "../imgs/orange.png")
+            }
+        }
+        const luckyBtn = document.getElementById("lucky_btn")
+        luckyBtn.onclick = lucky
     </script>
 </html>

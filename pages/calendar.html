@@ -74,6 +74,14 @@
                         } else if (dayCount > lastDayCount) {
                             // 最後の行で、末日の後の曜日
                             calendarHtml += "<td></td>" // 空白のマス
+                        }
+                        // 追加分-------
+                        else if (
+                            dayCount === today.getDate() &&
+                            month === today.getMonth() + 1
+                        ) {
+                            calendarHtml += `<td id="today">${dayCount}</td>`
+                            dayCount++
                         } else {
                             calendarHtml += `<td>${dayCount}</td>`
                             dayCount++
