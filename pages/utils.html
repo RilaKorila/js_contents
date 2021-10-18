@@ -58,5 +58,46 @@
             const equal = document.getElementById("calc-btn")
             equal.onclick = calc
         </script>
+
+        <!-- ビンゴ -->
+        <h2>ビンゴ</h2>
+        <div class="bingo">
+            <input type="text" value=3 id="min">
+            <input type="text" value=10 id="max">
+            <a class="btn" id="shuffle">Go Go!</a>
+            <p id="result"></p>
+        </div>
+        <div class="number-box">
+            <p>すでにでた数字</p>
+            <p id="checked"></p>
+        </div>
+        <script>
+            
+            var checkedNumber = [];
+            console.log(numberPool)
+            // ランダムで数字を選ぶ
+            function pickUpNumber(min, max, numberPool){
+                // ランダムで削除場所を選ぶ
+                var num = Math.random() * numberPool.length;
+                var pickedNumber = numberPool.splice(num, 1) 
+                
+                document.getElementById("result").innerText = pickedNumber;
+                checkedNumber.push(pickedNumber)
+                document.getElementById("checked").innerText = checkedNumber;
+                
+            }
+            const shuffleBtn = document.getElementById("shuffle");
+            
+            shuffleBtn.onclick = function(){
+                const min = Number(document.getElementById("min").value);
+                const max = Number(document.getElementById("max").value)+1;
+                var numberPool = Array.from(Array(max-min).keys(), x => x + min)
+
+                pickUpNumber(min, max, numberPool);
+            }
+
+
+        </script>
+
     </body>
 </html>
