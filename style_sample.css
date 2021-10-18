@@ -1,0 +1,17 @@
+img {
+    width: 400px;
+    height: 400px;
+}
+
+.intro {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.intro p {
+    font-weight: bold;
+}
+
+.fruit {
+    text-align: center;
+}
