@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>utils</title>
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <!-- 電卓 -->
+        <h2>電卓</h2>
+        <div class="dentaku">
+            <input type="text" id="result" />
+            <div>
+                <a class="edit-btn">1</a>
+                <a class="edit-btn">2</a>
+                <a class="edit-btn">3</a>
+                <a class="edit-btn">+</a>
+            </div>
+            <div>
+                <a class="edit-btn">4</a>
+                <a class="edit-btn">5</a>
+                <a class="edit-btn">6</a>
+                <a class="edit-btn">-</a>
+            </div>
+            <div>
+                <a class="edit-btn">7</a>
+                <a class="edit-btn">8</a>
+                <a class="edit-btn">9</a>
+                <a class="edit-btn">/</a>
+            </div>
+            <div>
+                <a class="edit-btn">0</a>
+                <a class="edit-btn">.</a>
+                <a class="edit-btn">*</a>
+                <a id="calc-btn">=</a>
+            </div>
+        </div>
+
+        <script>
+            var result = document.getElementById("result")
+            function edit(elem) {
+                result.value = result.value + elem.innerText
+            }
+            function calc() {
+                console.log("calc")
+                result.value = new Function("return " + result.value)()
+            }
+
+            const btns = document.getElementsByClassName("edit-btn")
+            for (var i = 0; i < btns.length; i++) {
+                console.log(btns[i].innerText)
+                btns[i].onclick = function (e) {
+                    console.log(e.target.innerText)
+                    edit(e.target)
+                }
+            }
+            const equal = document.getElementById("calc-btn")
+            equal.onclick = calc
+        </script>
+    </body>
+</html>
