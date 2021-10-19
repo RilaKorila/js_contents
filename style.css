@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 /* ボタン共通 */
 .btn {
     display: inline-block;
@@ -28,6 +31,11 @@ header {
     line-height: 50px;
 }
 
+/* URL */
+.url-box {
+    text-align: center;
+}
+
 /* スライドショー */
 .slide-show {
     text-align: center;
@@ -40,6 +48,28 @@ header {
     width: 300px;
     height: 300px;
     margin: 10px auto;
+}
+
+/* card */
+.cards {
+    display: flex;
+    /* 折り返し指定 */
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: beige;
+    width: 45%;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    color: #666;
+}
+.cards h2 {
+    width: 100%;
+    text-align: center;
 }
 
 /* 占い */

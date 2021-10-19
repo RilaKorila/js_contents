@@ -16,77 +16,58 @@
                 <p>ただいまの時刻：<span id="clock"></span></p>
             </div>
         </header>
+
+        <div class="url-box">
+            <p><a href="./sample_before.html">スタート地点</a></p>
+            <p><a href="./sample_after.html">中間ゴール</a></p>
+        </div>
+
         <div class="slide-show">
             <h2>スライドショー</h2>
             <img src="imgs/fruits.png" id="slide_img" />
             <a class="btn" id="slide-btn" onclick="startStop()">start</a>
         </div>
 
-        <div class="uranai">
-            <h2>占い</h2>
-            <a class="btn" id="uranai_btn" onclick="uranai()">占う</a>
-            <p id="uranai_result"></p>
-        </div>
+        <div class="cards">
+            <h2>オプション項目</h2>
 
-        <div class="calendar">
-            <h2>カレンダー</h2>
-            <!-- ボタンクリックで月移動 -->
-            <div class="calendar-header">
-                <a id="prev-btn" onclick="prev()"></a>
-                <h2 id="calendar-title"></h2>
-                <a id="next-btn" onclick="next()"></a>
+            <div class="card">
+                <h2>占い</h2>
+                <p>乱数, 分岐, 配列のindexを使う。</p>
+                <p><a href="./pages/uranai.html"> こちら</a></p>
             </div>
-            <!-- カレンダー -->
-            <div id="calendar-main"></div>
-        </div>
-        <!-- calendar.jsの読み込み -->
-        <script src="js/calendar.js">
-            drawCalendar(year, month);
-        </script>
 
-        <div class="weather">
-            <h2>お天気</h2>
-            <div class="summary">
-                <h3>東京の概要</h3>
-                <table>
-                    <tr>
-                        <th>発表者</th>
-                        <td id="publishingOffice"></td>
-                    </tr>
-                    <tr>
-                        <th>報告日時</th>
-                        <td id="reportDatetime"></td>
-                    </tr>
-                    <tr>
-                        <th>対象地域</th>
-                        <td id="targetArea"></td>
-                    </tr>
-                    <tr>
-                        <th>ヘッドライン</th>
-                        <td id="headlineText"></td>
-                    </tr>
-                    <tr>
-                        <th>詳細</th>
-                        <td id="text"></td>
-                    </tr>
-                </table>
+            <div class="card">
+                <h2>カレンダー</h2>
+                <p>Dateメソッド, 反復, 分岐を使う</p>
+                <p>
+                    todayをハイライトする仕様であれば、id,
+                    classの使い分けが勉強になる
+                </p>
+                <p><a href="./pages/calendar.html"> こちら</a></p>
             </div>
-            <div class="forecast">
-                <h3>明日の東京</h3>
-                <table>
-                    <tr>
-                        <th>今日</th>
-                        <td id="today"></td>
-                    </tr>
-                    <tr>
-                        <th>明日</th>
-                        <td id="tomorrow"></td>
-                    </tr>
-                    <tr>
-                        <th>明後日</th>
-                        <td id="dayAfterTomorrow"></td>
-                    </tr>
-                </table>
+
+            <div class="card">
+                <h2>お天気</h2>
+                <p>
+                    APIを使ってみる。今回は、気象庁がJSON形式で公表するデータを使用
+                </p>
+                <p><a href="./pages/weather.html">こちら</a></p>
+            </div>
+
+            <div class="card">
+                <h2>とけい</h2>
+                <p>Dateメソッドをさらに応用。</p>
+                <p>
+                    アナログ時計に関しては、ほぼCSS頼りなので穴埋め箇所も少ないかも
+                </p>
+                <p><a href="./pages/noticeTime.html">こちら</a></p>
+            </div>
+
+            <div class="card">
+                <h2>電卓</h2>
+                <p>ボタンを配列で管理</p>
+                <p><a href="./pages/utils.html">こちら</a></p>
             </div>
         </div>
     </body>

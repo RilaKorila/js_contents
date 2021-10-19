@@ -8,19 +8,20 @@
 
     <body>
         <h1>美味しいくだもの</h1>
-
         <div class="intro">
             <!-- 全員：ここをスライドショーにする -->
             <!-- idを追加 -->
-            <img src="./imgs/fruits.png" id="slide-show"/>
+            <img src="./imgs/fruits.png" id="slide-show" />
             <p>旬の果物はとってもフレッシュで美味しいのです！</p>
             <p>おすすめを紹介します！！</p>
             <!-- ボタンを追加 -->
             <a class="btn" id="start-btn">start</a>
             <a class="btn" id="stop-btn">stop</a>
-            <a class="btn" id="start-stop-btn">stop</a>
+            <!-- 分岐: 1つのボタンで2つの役割のボタン -->
+            <a class="btn" id="start-stop-btn">start</a>
         </div>
 
+        <!-- for文: 表示を増やす？ -->
         <div class="fruit">
             <h2>りんご</h2>
             <p>旬の時期：冬</p>
@@ -46,13 +47,13 @@
                 "./imgs/orange.png",
                 "./imgs/cherry.png",
             ]
-            
+
             // まずは配列の考え方から
             function slide_time() {
                 // numにはおなじ0から3がランダムに入る
                 // 3 = (参加者が埋める:new_img_listの長さ) TRY
                 var num = Math.floor(Math.random() * newImgList.length)
-                //　要素を取得 
+                //　要素を取得
                 const slideImg = document.getElementById("slide-show")
                 // 要素に対して、実行(今回は、属性を付与)
                 slideImg.setAttribute("src", newImgList[num])
@@ -79,20 +80,20 @@
             // ボタンを1つにする ->> 分岐
             // TRY 分岐の練習：if文は自分で
             function startStopSlide() {
-                var text = document.getElementById("start-stop-btn").innerText;
-                if (text === "start"){
-                    document.getElementById("start-stop-btn").innerText = "stop";
+                var text = document.getElementById("start-stop-btn").innerText
+                if (text === "start") {
+                    document.getElementById("start-stop-btn").innerText = "stop"
                     timerID = setInterval(slide_time, 3000)
-                }
-                else{
-                    document.getElementById("start-stop-btn").innerText = "start";
+                } else {
+                    document.getElementById("start-stop-btn").innerText =
+                        "start"
                     clearInterval(timerID)
                 }
             }
             // TRY onclickをボタンにつける
-            startBtn.onclick = startSlide;
-            stopBtn.onclick = stopSlide;
-            startStop.onclick = startStopSlide;
+            startBtn.onclick = startSlide
+            stopBtn.onclick = stopSlide
+            startStop.onclick = startStopSlide
         </script>
     </body>
 </html>
