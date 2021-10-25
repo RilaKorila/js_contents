@@ -15,10 +15,10 @@
             <p>旬の果物はとってもフレッシュで美味しいのです！</p>
             <p>おすすめを紹介します！！</p>
             <!-- ボタンを追加 -->
-            <!-- <a class="btn" id="start-btn">start</a> -->
-            <!-- <a class="btn" id="stop-btn">stop</a> -->
+            <a class="btn" id="start-btn">start</a>
+            <a class="btn" id="stop-btn">stop</a>
             <!-- 分岐: 1つのボタンで2つの役割のボタン -->
-            <a class="btn" id="start-stop-btn">start</a>
+            <!-- <a class="btn" id="start-stop-btn">start</a> -->
         </div>
 
         <!-- for文: 表示を増やす？ -->
@@ -92,9 +92,9 @@
                 }
             }
             // TRY onclickをボタンにつける
-            // startBtn.onclick = startSlide
-            // stopBtn.onclick = stopSlide
-            startStop.onclick = startStopSlide
+            startBtn.onclick = startSlide
+            stopBtn.onclick = stopSlide
+            // startStop.onclick = startStopSlide
             // setInterval(slide_time, 2000)
         </script>
     </body>
