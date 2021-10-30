@@ -93,6 +93,28 @@ header {
     margin: 10px auto;
 }
 
+.star-container {
+    text-align: center;
+    margin: 0 30px;
+}
+.star-container h3 {
+    margin-top: 20px;
+}
+.radio-box {
+    max-width: 500px;
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    display: block;
+    margin: 0 auto;
+}
+
+.radio-box label {
+    padding: 0 5px;
+    color: navy;
+}
+
 /* カレンダー */
 .calendar {
     max-width: 600px;
