@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+
+.main-container {
+    margin: 20px 20px;
+}
 /* ボタン共通 */
 .btn {
     display: inline-block;

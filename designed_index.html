@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>slide_show</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="scroll.css" />
+    </head>
+    <body>
+        <div class="slide-show">
+            <h2>スライドショー</h2>
+            <img src="imgs/fruits.png" id="slide_img" />
+            <a class="btn" id="slide-btn" onclick="startStop()">start</a>
+        </div>
+
+        <h2>オプション項目</h2>
+        <ul class="accordion-area">
+            <li>
+                <section>
+                    <h3 class="title">カレンダー</h3>
+                    <div class="box">
+                        <p>Dateメソッド, 反復, 分岐を使う</p>
+                        <p>
+                            todayをハイライトする仕様であれば、id,
+                            classの使い分けが勉強になる
+                        </p>
+                        <p><a href="./pages/calendar.html"> こちら</a></p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">お天気</h3>
+                    <div class="box">
+                        <p>
+                            APIを使ってみる。今回は、気象庁がJSON形式で公表するデータを使用
+                        </p>
+                        <p><a href="./pages/weather.html">こちら</a></p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">とけい</h3>
+                    <div class="box">
+                        <p>Dateメソッドをさらに応用。</p>
+                        <p>
+                            アナログ時計に関しては、ほぼCSS頼りなので穴埋め箇所も少ないかも
+                        </p>
+                        <p><a href="./pages/noticeTime.html">こちら</a></p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">電卓</h3>
+                    <div class="box">
+                        <p>ボタンを配列で管理</p>
+                        <p><a href="./pages/utils.html">こちら</a></p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            //アコーディオンをクリックした時の動作
+            $(".title").on("click", function () {
+                //タイトル要素をクリックしたら
+                var findElm = $(this).next(".box") //直後のアコーディオンを行うエリアを取得し
+                $(findElm).slideToggle() //アコーディオンの上下動作
+
+                if ($(this).hasClass("close")) {
+                    //タイトル要素にクラス名closeがあれば
+                    $(this).removeClass("close") //クラス名を除去し
+                } else {
+                    //それ以外は
+                    $(this).addClass("close") //クラス名closeを付与
+                }
+            })
+            // const titles = document.getElementsByClassName("title");
+            // const boxes = document.getElementsByClassName("box");
+            // for (var i = 0; i < titles.length; i++) {
+            //     console.log(titles[i].innerText)
+            //     titles[i].onclick = function (e) {
+            //         var findElm = boxes[i]
+            //     }
+            // }
+
+            //ページが読み込まれた際にopenクラスをつけ、openがついていたら開く動作※不必要なら下記全て削除
+            $(window).on("load", function () {
+                $(".accordion-area li:first-of-type section").addClass("open") //accordion-areaのはじめのliにあるsectionにopenクラスを追加
+                $(".open").each(function (index, element) {
+                    //openクラスを取得
+                    var Title = $(element).children(".title") //openクラスの子要素のtitleクラスを取得
+                    $(Title).addClass("close") //タイトルにクラス名closeを付与し
+                    var Box = $(element).children(".box") //openクラスの子要素boxクラスを取得
+                    $(Box).slideDown(500) //アコーディオンを開く
+                })
+            })
+        </script>
+    </body>
+</html>
