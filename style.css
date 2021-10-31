@@ -60,7 +60,7 @@ header {
     /* 折り返し指定 */
     flex-wrap: wrap;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .card {
