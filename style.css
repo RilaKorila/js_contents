@@ -287,3 +287,123 @@ header {
     border-radius: 50%;
     margin: 5px 1px;
 }
+
+/* animon */
+.contentsAnime {
+    width: 65%;
+}
+.contentsAnime h2 {
+    background-color: rgba(200, 43, 100, 0.4);
+    font-size: 30px;
+    white-space: nowrap;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 2px;
+}
+
+.contentsAnime p {
+    background-color: rgba(30, 30, 30, 0.4);
+    font-size: 15px;
+    line-height: 1.2;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.contentsAnime ul {
+    list-style: none;
+}
+.contentsAnime li {
+    position: relative;
+}
+
+.contentsAnime li:nth-last-of-type(odd) .animeText {
+    right: 0;
+}
+
+.contentsAnime li:nth-last-of-type(even) .animeText {
+    margin-left: auto;
+}
+
+.animeText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 40px;
+}
+
+.contentsAnime img {
+    width: 45%;
+    border-radius: 5px;
+    display: block;
+}
+
+/* SVG */
+.ico-svg {
+    margin: 20px;
+}
+.ico-svg path {
+    -webkit-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+}
+
+.ico-svg:hover path {
+    fill: indianred;
+}
+
+.space {
+    height: 600px;
+}
+/* 波の動き */
+.ico-svg-03 {
+    margin: 30px;
+}
+
+.ico-svg-03 path {
+    fill: #eee;
+    stroke: transparent;
+}
+
+.ico-svg-03:hover path {
+    -webkit-animation: stroke 2s ease-in-out forwards;
+    animation: stroke 2s ease-in-out forwards;
+    stroke: rgba(205, 92, 92, 0.5);
+    stroke-dasharray: 1800;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+}
+
+@-webkit-keyframes stroke {
+    0% {
+        fill: #eee;
+        stroke-dashoffset: 1800;
+    }
+    10% {
+        fill: transparent;
+    }
+    80% {
+        fill: transparent;
+    }
+    100% {
+        fill: indianred;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes stroke {
+    0% {
+        fill: #eee;
+        stroke-dashoffset: 1800;
+    }
+    10% {
+        fill: transparent;
+    }
+    80% {
+        fill: transparent;
+    }
+    100% {
+        fill: indianred;
+        stroke-dashoffset: 0;
+    }
+}

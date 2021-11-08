@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>sample_aflter</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="../style_sample.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/animon@1.0.1/dist/animon.css"
+        />
+        <script
+            type="text/javascript"
+            src="https://unpkg.com/animon@1.0.1/dist/animon.iife.js"
+        ></script>
+        <script type="text/javascript">
+            Animon.animon()
+        </script>
+    </head>
+
+    <body>
+        <h1>美味しいくだもの</h1>
+        <div class="intro">
+            <img src="../imgs/fruits.png" id="slide-show" />
+            <p>旬の果物はとってもフレッシュで美味しいのです！</p>
+            <p>おすすめを紹介します！！</p>
+            <a class="btn" id="start-stop-btn">start</a>
+        </div>
+
+        <!-- <ul class="contentsAnime">
+            <li class="animationTarget">
+                <img src="../imgs/apple.png" />
+                <div class="animeText">
+                    <h2>りんご</h2>
+                    <p>旬の時期：冬</p>
+                </div>
+            </li>
+            <li class="animationTarget">
+                <img src="../imgs/orange.png" />
+                <div class="animeText">
+                    <h2>オレンジ</h2>
+                    <p>旬の時期：冬</p>
+                </div>
+            </li>
+            <li class="animationTarget">
+                <img src="../imgs/cherry.png" />
+                <div class="animeText">
+                    <h2>さくらんぼ</h2>
+                    <p>旬の時期：夏</p>
+                </div>
+            </li>
+        </ul>
+         -->
+
+        <!-- for文: 表示を増やす？ -->
+        <div class="animonItem" data-effect="fadeIn" data-duration="4s">
+            <div class="fruit">
+                <h2>りんご</h2>
+                <p>旬の時期：冬</p>
+                <img src="../imgs/apple.png" />
+            </div>
+        </div>
+        <div class="fruit">
+            <h2>オレンジ</h2>
+            <p>旬の時期：冬</p>
+            <img src="../imgs/orange.png" />
+        </div>
+
+        <div class="fruit">
+            <h2>さくらんぼ</h2>
+            <p>旬の時期：夏</p>
+            <img src="../imgs/cherry.png" />
+        </div>
+
+        <script>
+            // スライドショー
+            const newImgList = [
+                "../imgs/apple.png",
+                "../imgs/orange.png",
+                "../imgs/cherry.png",
+            ]
+
+            function slide_time() {
+                var num = Math.floor(Math.random() * newImgList.length)
+                const slideImg = document.getElementById("slide-show")
+                slideImg.setAttribute("src", newImgList[num])
+            }
+
+            const startBtn = document.getElementById("start-btn")
+            const stopBtn = document.getElementById("stop-btn")
+            const startStop = document.getElementById("start-stop-btn")
+            var timerID
+
+            function startStopSlide() {
+                console.log("start stop")
+                var text = document.getElementById("start-stop-btn").innerText
+                if (text === "start") {
+                    document.getElementById("start-stop-btn").innerText = "stop"
+                    timerID = setInterval(slide_time, 2000)
+                } else {
+                    document.getElementById("start-stop-btn").innerText =
+                        "start"
+                    clearInterval(timerID)
+                }
+            }
+            startStop.onclick = startStopSlide
+
+            // animon
+        </script>
+    </body>
+</html>
