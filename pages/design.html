@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>slide_show</title>
         <link rel="stylesheet" href="../style.css" />
+        <script src="https://unpkg.com/ityped@1.0.3"></script>
     </head>
 
     <body>
@@ -66,6 +67,11 @@
                 Hover over me
                 <span class="tooltiptext">Tooltip text</span>
             </div>
+
+            <div style="margin: 30px auto; font-size: 50px;">
+                <span id="ityped"></span>
+            </div>
+
             <div class="space"></div>
 
             <div class="ico-svg-03">
@@ -147,6 +153,17 @@
 
                 popup.classList.toggle("show")
             }
+
+            // ------------------  ityped  ------------------
+
+            ityped.init(`#ityped`, {
+                // 表示させたい文字を配列で用意する
+                // strings: ["文字列１", "文字列２", "文字列３"],
+                strings: ["Let's unlock your potential !!"],
+                // アニメーションをループさせる
+                loop: false,
+                cursorChar: "|", 
+            })
         </script>
     </body>
 </html>
