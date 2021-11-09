@@ -357,9 +357,6 @@ header {
     fill: indianred;
 }
 
-.space {
-    height: 1000px;
-}
 /* svgの輪郭をなぞる動き */
 .ico-svg-03 {
     margin: 30px;
