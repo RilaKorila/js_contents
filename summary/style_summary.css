@@ -81,23 +81,26 @@ header {
     text-align: center;
 }
 
-/* 占い */
-.uranai {
+/* 他のパーツにも共通 */
+.wrapper {
     display: flex;
     justify-content: space-around;
     padding: 30px 0;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-.uranai-sub {
+.wrapper h2 {
+    margin-top: 0;
+}
+.wrapper-sub {
     text-align: center;
 }
 
-.uranai-sub img {
-    display: block;
-    width: 300px;
-    height: 300px;
+.wrapper-sub img {
     margin: 10px auto;
 }
 
+/* 占い */
 .star-container h3 {
     margin-top: 20px;
 }
@@ -211,6 +214,7 @@ header {
      最後のアイテムは末尾に寄せる */
     justify-content: space-between;
     align-items: center;
+    padding: 30px;
 }
 
 .clock {

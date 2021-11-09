@@ -9,17 +9,50 @@
 
     <body>
         <div class="main-container">
+            <!-- ------------------  カレンダー  ------------------ -->
+            <h1>時間</h1>
+            <div class="wrapper">
+                <div class="wrapper-sub">
+                    <div class="show-time">
+                        <p id="now"></p>
+                    </div>
+
+                    <div class="show-date">
+                        <p id="today"></p>
+                    </div>
+                </div>
+                <div class="calendar wrapper-sub">
+                    <!-- ボタンクリックで月移動 -->
+                    <div class="calendar-header">
+                        <a id="prev-btn"></a>
+                        <h2 id="calendar-title"></h2>
+                        <a id="next-btn"></a>
+                    </div>
+                    <!-- カレンダー本体 -->
+                    <div id="calendar-main"></div>
+                </div>
+
+                <!-- アナログ時計 -->
+                <div class="clock-container wrapper-sub">
+                    <div class="clock">
+                        <div class="needle" id="hour"></div>
+                        <div class="needle" id="minute"></div>
+                        <div class="center-point"></div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
             <!-- ------------------  占い系  ------------------ -->
             <h1>占い</h1>
-            <div class="uranai">
-                <div class="simple-uranai">
+            <div class="wrapper">
+                <div class="wrapper-sub">
                     <h2>占い</h2>
                     <a class="btn" id="uranai_btn">占う</a>
                     <p id="uranai_result"></p>
                 </div>
 
                 <!-- ラッキーアイテム: 画像を表示 -->
-                <div class="lucky">
+                <div class="wrapper-sub">
                     <h2>ラッキーアイテム</h2>
                     <a class="btn" id="lucky_btn">占う</a>
                     <img
@@ -36,7 +69,7 @@
 
                 <!-- 星占い -->
                 <!-- 星占い + Bootstrap -->
-                <div class="star-container uranai-sub">
+                <div class="star-container wrapper-sub">
                     <h2>今月の星占い</h2>
                     <div class="radio-box">
                         <!-- <script src="../js/uranai.js"></script> -->
