@@ -3,15 +3,20 @@
 }
 
 .main-container {
-    margin: 20px 20px;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #666;
 }
 /* ボタン共通 */
 .btn {
     display: inline-block;
-    width: 70px;
+    padding: 10px 20px;
     line-height: 30px;
     cursor: pointer;
-    background-color: aquamarine;
+    background-color: #aaa;
     border: 1px #eee solid;
     border-radius: 4px;
 }
@@ -78,35 +83,31 @@ header {
 
 /* 占い */
 .uranai {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+.uranai-sub {
     text-align: center;
-    margin-top: 30px;
 }
 
-.lucky {
-    text-align: center;
-    margin-top: 30px;
-}
-.lucky img {
+.uranai-sub img {
     display: block;
     width: 300px;
     height: 300px;
     margin: 10px auto;
 }
 
-.star-container {
-    text-align: center;
-    margin: 0 30px;
-}
 .star-container h3 {
     margin-top: 20px;
 }
 .radio-box {
-    max-width: 500px;
-    padding: 30px 0;
+    margin: 0 auto;
+    max-width: 410px;
+    padding-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    display: block;
+    justify-content: center;
     margin: 0 auto;
 }
 

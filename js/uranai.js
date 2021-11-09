@@ -66,7 +66,7 @@ const addElement = function (tag, contents, myClassName = "", myIdName = "") {
 
 // jsonを用いた星座ごとの占い
 const starArray = star_uranai["stars"]
-addElement("h2", "今月の星座占い")
+addElement("h3", "今月の星座占い")
 
 var contents = ""
 for (let i = 0; i < starArray.length; i++) {
