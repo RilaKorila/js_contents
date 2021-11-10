@@ -18,8 +18,8 @@ h3 {
 /* ボタン共通 */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    line-height: 30px;
+    padding: 10px 15px;
+    line-height: 20px;
     cursor: pointer;
     background-color: #aaa;
     border: 1px #eee solid;

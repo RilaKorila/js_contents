@@ -78,6 +78,7 @@
             <!-- テキストでの時間表示 -->
             <div class="wrapper">
                 <div class="wrapper-sub">
+                    <h2>テキスト表示</h2>
                     <div class="show-time">
                         <p id="now"></p>
                     </div>
@@ -86,26 +87,31 @@
                         <p id="today"></p>
                     </div>
                 </div>
-                <div class="calendar wrapper-sub">
-                    <!-- ボタンクリックで月移動 -->
-                    <div class="calendar-header">
-                        <a id="prev-btn"></a>
-                        <h2 id="calendar-title"></h2>
-                        <a id="next-btn"></a>
+                <div class="wrapper-sub">
+                    <h2>カレンダー</h2>
+                    <div class="calendar">
+                        <!-- ボタンクリックで月移動 -->
+                        <div class="calendar-header">
+                            <a id="prev-btn"></a>
+                            <h2 id="calendar-title"></h2>
+                            <a id="next-btn"></a>
+                        </div>
+                        <!-- カレンダー本体 -->
+                        <div id="calendar-main"></div>
                     </div>
-                    <!-- カレンダー本体 -->
-                    <div id="calendar-main"></div>
                 </div>
 
                 <!-- アナログ時計 -->
-                <div class="clock-container wrapper-sub">
-                    <div class="clock">
-                        <div class="needle" id="hour"></div>
-                        <div class="needle" id="minute"></div>
-                        <div class="center-point"></div>
+                <div class="wrapper-sub">
+                    <h2>アナログ時計</h2>
+                    <div class="clock-container">
+                        <div class="clock">
+                            <div class="needle" id="hour"></div>
+                            <div class="needle" id="minute"></div>
+                            <div class="center-point"></div>
+                        </div>
                     </div>
                 </div>
-                <div></div>
             </div>
             <!-- ------------------  占い系  ------------------ -->
             <h1>占い</h1>
