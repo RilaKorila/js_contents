@@ -1,3 +1,4 @@
+import { Freezeframe } from ""
 // ------------------  スライドショー  ------------------
 // スライドショー
 const newImgList = [
@@ -38,7 +39,6 @@ var timerID
 // ボタンを1つにする ->> 分岐
 // TRY 分岐の練習：if文は自分で
 function startStopSlide() {
-    console.log("start stop")
     var text = document.getElementById("start-stop-btn").innerText
     if (text === "start") {
         document.getElementById("start-stop-btn").innerText = "stop"
@@ -262,7 +262,28 @@ setTime()
 setInterval(setTime, 1000)
 
 // ------------------  占い(3種)  ------------------
+// function uranai() {
+//     var fortune_num = Math.floor(Math.random() * 4)
+
+//     var resultText
+//     if (fortune_num === 0) {
+//         resultText = "大吉"
+//     } else if (fortune_num === 1) {
+//         resultText = "中吉"
+//     } else if (fortune_num === 2) {
+//         resultText = "小吉"
+//     } else {
+//         resultText = "吉"
+//     }
+
+//     document.getElementById("uranai_result").textContent = resultText
+// }
+
+// const uranaiBtn = document.getElementById("uranai_btn")
+// uranaiBtn.onclick = uranai
+
 function uranai() {
+    console.log("uranai")
     var fortune_num = Math.floor(Math.random() * 4)
 
     var resultText
@@ -278,9 +299,16 @@ function uranai() {
 
     document.getElementById("uranai_result").textContent = resultText
 }
-
+const gacha = new Freezeframe("#gacha", {
+    trigger: false,
+})
 const uranaiBtn = document.getElementById("uranai_btn")
-uranaiBtn.onclick = uranai
+uranaiBtn.onclick = function () {
+    gacha.start()
+
+    // gifの終了を待って表示 = 3000ミリ秒後に関数uranaiを実行
+    setTimeout(uranai, 3000)
+}
 
 function lucky() {
     var fortune_num = Math.floor(Math.random() * 4)
@@ -315,7 +343,6 @@ checkButton.addEventListener(
                 checkValue = fruitRadio.item(i).value
             }
         }
-        console.log("選択されているのは " + checkValue + " です")
 
         var res
         if (checkValue === "ohitsuji") {
@@ -396,15 +423,12 @@ function edit(elem) {
     result.value = result.value + elem.innerText
 }
 function calc() {
-    console.log("calc")
     result.value = new Function("return " + result.value)()
 }
 
 const btns = document.getElementsByClassName("edit-btn")
 for (var i = 0; i < btns.length; i++) {
-    console.log(btns[i].innerText)
     btns[i].onclick = function (e) {
-        console.log(e.target.innerText)
         edit(e.target)
     }
 }

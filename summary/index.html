@@ -5,6 +5,7 @@
         <title>summary</title>
         <link rel="stylesheet" href="./style_summary.css" />
         <script src="https://unpkg.com/ityped@1.0.3"></script>
+        <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
     </head>
 
     <body>
@@ -117,10 +118,20 @@
             <h1>占い</h1>
             <div class="wrapper">
                 <div class="wrapper-sub">
-                    <h2>占い</h2>
+                    <h2>あなたへおすすめの歌</h2>
+                    <!-- divのwidth指定：gifファイルのwidthが外のdivのwidthを超えた場合にデザインがずれる -->
+                    <div id="gacha" style="width: 170px; margin: 0 auto 5px">
+                        <!-- (TODO) gif画像の差し替え -->
+                        <img
+                            class="freezeframe"
+                            src="../imgs/gacha.gif"
+                            style="width: 150px; height: 200px; display: block"
+                        />
+                    </div>
                     <a class="btn" id="uranai_btn">占う</a>
                     <p id="uranai_result"></p>
                 </div>
+                <script></script>
 
                 <!-- ラッキーアイテム: 画像を表示 -->
                 <div class="wrapper-sub">
