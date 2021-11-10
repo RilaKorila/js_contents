@@ -389,3 +389,24 @@ function showPopup() {
 
     popup.classList.toggle("show")
 }
+
+// ------------------  電卓  ------------------
+var result = document.getElementById("result")
+function edit(elem) {
+    result.value = result.value + elem.innerText
+}
+function calc() {
+    console.log("calc")
+    result.value = new Function("return " + result.value)()
+}
+
+const btns = document.getElementsByClassName("edit-btn")
+for (var i = 0; i < btns.length; i++) {
+    console.log(btns[i].innerText)
+    btns[i].onclick = function (e) {
+        console.log(e.target.innerText)
+        edit(e.target)
+    }
+}
+const equal = document.getElementById("calc-btn")
+equal.onclick = calc
