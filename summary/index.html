@@ -9,9 +9,20 @@
     </head>
 
     <body>
+        <header>
+            <ul>
+                <li><a href="#slide">スライドショー</a></li>
+                <li><a href="#weather">お天気</a></li>
+                <li><a href="#time">時間</a></li>
+                <li><a href="#uranai">占い</a></li>
+                <li><a href="#design">デザイン</a></li>
+                <li><a href="#gallery">ギャラリー</a></li>
+                <li><a href="#calc">電卓</a></li>
+            </ul>
+        </header>
         <div class="main-container">
             <!-- ------------------  スライドショー  ------------------ -->
-            <h1>スライドショー</h1>
+            <h1 id="slide">スライドショー</h1>
             <div class="wrapper">
                 <div class="intro">
                     <img src="../imgs/fruits.png" id="slide-show" />
@@ -29,7 +40,7 @@
             </div>
             <!-- ------------------  API  ------------------ -->
             <div class="weather">
-                <h1>お天気</h1>
+                <h1 id="weather">お天気</h1>
                 <div class="summary">
                     <h3>東京の概要</h3>
                     <table>
@@ -75,7 +86,7 @@
             </div>
 
             <!-- ------------------  時間系  ------------------ -->
-            <h1>時間</h1>
+            <h1 id="time">時間</h1>
             <!-- テキストでの時間表示 -->
             <div class="wrapper">
                 <div class="wrapper-sub">
@@ -115,7 +126,7 @@
                 </div>
             </div>
             <!-- ------------------  占い系  ------------------ -->
-            <h1>占い</h1>
+            <h1 id="uranai">占い</h1>
             <div class="wrapper">
                 <div class="wrapper-sub">
                     <h2>あなたへおすすめの歌</h2>
@@ -265,7 +276,7 @@
                 </div>
             </div>
             <!-- ------------------  デザインに変化を加える  ------------------ -->
-            <h1>デザインに変化</h1>
+            <h1 id="design">デザインに変化</h1>
             <!--  svgファイルの変化  -->
             <div class="wrapper">
                 <div class="wrapper-sub">
@@ -370,7 +381,7 @@
             </div>
 
             <!-- ------------------  電卓  ------------------ -->
-            <h1>電卓</h1>
+            <h1 id="calc">電卓</h1>
             <div class="wrapper">
                 <div class="dentaku">
                     <input type="text" id="result" />
