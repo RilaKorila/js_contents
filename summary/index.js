@@ -1,4 +1,3 @@
-import { Freezeframe } from ""
 // ------------------  スライドショー  ------------------
 // スライドショー
 const newImgList = [
@@ -52,6 +51,18 @@ function startStopSlide() {
 // startBtn.onclick = startSlide
 // stopBtn.onclick = stopSlide
 startStop.onclick = startStopSlide
+
+// ------------------  iTyped  ------------------
+var AM_PM = new Date().getHours()
+if (AM_PM > 12) {
+    // 午後
+    console.log(AM_PM, "at  nigiht")
+    document.getElementById("ityped-text").style.color = "blue"
+} else {
+    console.log("at  morning")
+    console.log(AM_PM)
+    document.getElementById("ityped-text").style.color = "red"
+}
 // ------------------  API  ------------------
 // ---- お天気
 const WEATHER_SUMMARY =
@@ -262,28 +273,7 @@ setTime()
 setInterval(setTime, 1000)
 
 // ------------------  占い(3種)  ------------------
-// function uranai() {
-//     var fortune_num = Math.floor(Math.random() * 4)
-
-//     var resultText
-//     if (fortune_num === 0) {
-//         resultText = "大吉"
-//     } else if (fortune_num === 1) {
-//         resultText = "中吉"
-//     } else if (fortune_num === 2) {
-//         resultText = "小吉"
-//     } else {
-//         resultText = "吉"
-//     }
-
-//     document.getElementById("uranai_result").textContent = resultText
-// }
-
-// const uranaiBtn = document.getElementById("uranai_btn")
-// uranaiBtn.onclick = uranai
-
 function uranai() {
-    console.log("uranai")
     var fortune_num = Math.floor(Math.random() * 4)
 
     var resultText
@@ -299,16 +289,9 @@ function uranai() {
 
     document.getElementById("uranai_result").textContent = resultText
 }
-const gacha = new Freezeframe("#gacha", {
-    trigger: false,
-})
-const uranaiBtn = document.getElementById("uranai_btn")
-uranaiBtn.onclick = function () {
-    gacha.start()
 
-    // gifの終了を待って表示 = 3000ミリ秒後に関数uranaiを実行
-    setTimeout(uranai, 3000)
-}
+// const uranaiBtn = document.getElementById("uranai_btn")
+// uranaiBtn.onclick = uranai
 
 function lucky() {
     var fortune_num = Math.floor(Math.random() * 4)

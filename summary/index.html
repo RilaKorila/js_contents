@@ -24,7 +24,7 @@
             </div>
 
             <!-- ------------------  ityped  ------------------ -->
-            <div style="margin: 30px auto; font-size: 50px">
+            <div id="ityped-text" style="margin: 30px auto; font-size: 50px">
                 <span id="ityped"></span>
             </div>
             <!-- ------------------  API  ------------------ -->
@@ -131,7 +131,6 @@
                     <a class="btn" id="uranai_btn">占う</a>
                     <p id="uranai_result"></p>
                 </div>
-                <script></script>
 
                 <!-- ラッキーアイテム: 画像を表示 -->
                 <div class="wrapper-sub">
@@ -405,6 +404,7 @@
             <!-- ページ上部に戻るボタン -->
             <button id="scroll-to-top-btn">↑</button>
         </div>
+        <script src="./index.js"></script>
         <script>
             // ------------------  ityped  ------------------
 
@@ -417,6 +417,17 @@
                 cursorChar: "|",
             })
         </script>
-        <script src="./index.js"></script>
+        <script>
+            const gacha = new Freezeframe("#gacha", {
+                trigger: false,
+            })
+            const uranaiBtn = document.getElementById("uranai_btn")
+            uranaiBtn.onclick = function () {
+                gacha.start()
+
+                // gifの終了を待って表示 = 3000ミリ秒後に関数uranaiを実行
+                setTimeout(uranai, 3000)
+            }
+        </script>
     </body>
 </html>
