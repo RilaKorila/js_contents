@@ -210,8 +210,8 @@ header {
     /* flexアイテムを積み重ねるように配置 */
     flex-direction: column;
     /* 各アイテムを均等に配置し
-     最初のアイテムは先頭に寄せ、
-     最後のアイテムは末尾に寄せる */
+    最初のアイテムは先頭に寄せ、
+    最後のアイテムは末尾に寄せる */
     justify-content: space-between;
     align-items: center;
     padding: 30px;

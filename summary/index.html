@@ -9,8 +9,56 @@
 
     <body>
         <div class="main-container">
-            <!-- ------------------  カレンダー  ------------------ -->
+            <!-- ------------------  API  ------------------ -->
+            <div class="weather">
+                <h1>お天気</h1>
+                <div class="summary">
+                    <h3>東京の概要</h3>
+                    <table>
+                        <tr>
+                            <th>発表者</th>
+                            <td id="publishingOffice"></td>
+                        </tr>
+                        <tr>
+                            <th>報告日時</th>
+                            <td id="reportDatetime"></td>
+                        </tr>
+                        <tr>
+                            <th>対象地域</th>
+                            <td id="targetArea"></td>
+                        </tr>
+                        <tr>
+                            <th>ヘッドライン</th>
+                            <td id="headlineText"></td>
+                        </tr>
+                        <tr>
+                            <th>詳細</th>
+                            <td id="text"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="forecast">
+                    <h3>明日の東京</h3>
+                    <table>
+                        <tr>
+                            <th>今日</th>
+                            <td id="today"></td>
+                        </tr>
+                        <tr>
+                            <th>明日</th>
+                            <td id="tomorrow"></td>
+                        </tr>
+                        <tr>
+                            <th>明後日</th>
+                            <td id="dayAfterTomorrow"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ------------------  時間系  ------------------ -->
             <h1>時間</h1>
+            <!-- テキストでの時間表示 -->
             <div class="wrapper">
                 <div class="wrapper-sub">
                     <div class="show-time">
