@@ -593,3 +593,11 @@ header li {
     visibility: visible;
     opacity: 1;
 }
+
+/* ------------------ ギャラリー ------------------ */
+.modal-gallery {
+    flex-wrap: wrap;
+}
+.modal-gallery img {
+    width: 25%;
+}
