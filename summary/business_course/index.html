@@ -9,6 +9,122 @@
     <body>
         <div class="main-container">
             <h2>Business Course</h2>
+
+            <div class="contents">
+                <h3>Schedule</h3>
+                <div class="wrapper">
+                    <div class="wrapper-sub">
+                        <h2>カレンダー</h2>
+                        <div class="calendar">
+                            <!-- ボタンクリックで月移動 -->
+                            <div class="calendar-header">
+                                <a id="prev-btn"></a>
+                                <h2 id="calendar-title"></h2>
+                                <a id="next-btn"></a>
+                            </div>
+                            <!-- カレンダー本体 -->
+                            <div id="calendar-main"></div>
+                        </div>
+                    </div>
+                    <!-- アナログ時計 -->
+                    <div class="wrapper-sub">
+                        <h2>アナログ時計</h2>
+                        <div class="clock-container">
+                            <div class="clock">
+                                <div class="needle" id="hour"></div>
+                                <div class="needle" id="minute"></div>
+                                <div class="center-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contents">
+                <h3>Weather</h3>
+                <div class="weather">
+                    <div class="summary">
+                        <h3>東京の概要</h3>
+                        <table>
+                            <tr>
+                                <th>発表者</th>
+                                <td id="publishingOffice"></td>
+                            </tr>
+                            <tr>
+                                <th>報告日時</th>
+                                <td id="reportDatetime"></td>
+                            </tr>
+                            <tr>
+                                <th>対象地域</th>
+                                <td id="targetArea"></td>
+                            </tr>
+                            <tr>
+                                <th>ヘッドライン</th>
+                                <td id="headlineText"></td>
+                            </tr>
+                            <tr>
+                                <th>詳細</th>
+                                <td id="text"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="forecast">
+                        <!-- 地域コードで選択できるようにしたい -->
+                        <h3>東京の天気予報</h3>
+                        <table>
+                            <tr>
+                                <th>今日</th>
+                                <td id="today_weather"></td>
+                            </tr>
+                            <tr>
+                                <th>明日</th>
+                                <td id="tomorrow_weather"></td>
+                            </tr>
+                            <tr>
+                                <th>明後日</th>
+                                <td id="dayAfterTomorrow_weather"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contents">
+                <h3>calculator</h3>
+                <div class="wrapper">
+                    <div class="dentaku">
+                        <input type="text" id="result" />
+                        <div>
+                            <a class="edit-btn">1</a>
+                            <a class="edit-btn">2</a>
+                            <a class="edit-btn">3</a>
+                            <a class="edit-btn">+</a>
+                        </div>
+                        <div>
+                            <a class="edit-btn">4</a>
+                            <a class="edit-btn">5</a>
+                            <a class="edit-btn">6</a>
+                            <a class="edit-btn">-</a>
+                        </div>
+                        <div>
+                            <a class="edit-btn">7</a>
+                            <a class="edit-btn">8</a>
+                            <a class="edit-btn">9</a>
+                            <a class="edit-btn">/</a>
+                        </div>
+                        <div>
+                            <a class="edit-btn">0</a>
+                            <a class="edit-btn">.</a>
+                            <a class="edit-btn">*</a>
+                            <a id="calc-btn">=</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- キーボード -->
         </div>
+
+        <script src="business.js"></script>
     </body>
 </html>
