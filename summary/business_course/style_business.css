@@ -1,0 +1,7 @@
+body{
+    background-color: aliceblue;
+}
+.main-container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
