@@ -4,6 +4,10 @@
         <meta charset="utf-8" />
         <title>party course</title>
         <link rel="stylesheet" href="./style_party.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css"
+        />
     </head>
 
     <body>
@@ -16,7 +20,7 @@
         </div>
 
         <div class="main-container">
-            <h2>Party Course</h2>
+            <h2>♪ Slide Show ♪</h2>
 
             <!-- スライドショー -->
             <div class="wrapper">
@@ -26,10 +30,56 @@
                     <!-- <a class="btn" id="start-btn">start</a> -->
                     <!-- <a class="btn" id="stop-btn">stop</a> -->
                     <!-- 分岐: 1つのボタンで2つの役割のボタン -->
-                    <a class="btn" id="start-stop-btn">start</a>
+                    <a class="btn animoButtonOverlay" id="start-stop-btn"
+                        >start</a
+                    >
+                </div>
+            </div>
+
+            <h2>♪ keen-slider ♪</h2>
+            <div id="my-keen-slider" class="keen-slider">
+                <div class="keen-slider__slide">
+                    <img src="./imgs/party.jpg" alt="party" />
+                </div>
+                <div class="keen-slider__slide">
+                    <img src="./imgs/party2.jpg" alt="party" />
+                </div>
+            </div>
+
+            <h2>♪ Recommend ♪</h2>
+            <div class="recommend">
+                <p>ボタンを押したらおすすめの音楽が出てくるよ！</p>
+                <a class="btn animoButtonOverlay" id="recommend_music"
+                    >Check!!</a
+                >
+                <div id="recommend_contents">
+                    <p id="recommend_music_txt"></p>
+                    <img id="recommend_music_img" />
                 </div>
             </div>
         </div>
         <script src="party.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js"></script>
+        <script>
+            var sliderElement = document.getElementById("my-keen-slider")
+            var interval = 0
+            function autoplay(run) {
+                clearInterval(interval)
+                interval = setInterval(() => {
+                    if (run && slider) {
+                        slider.next()
+                    }
+                }, 2000)
+            }
+
+            var slider = new KeenSlider(sliderElement, {
+                loop: true,
+                duration: 1200,
+                // 最初に自動再生をONにする
+                created: () => {
+                    autoplay(true)
+                },
+            })
+        </script>
     </body>
 </html>

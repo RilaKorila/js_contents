@@ -28,10 +28,15 @@ body {
     margin: 50px auto;
 }
 .main-container h2 {
-    border-left: 5px solid orangered;
     padding-left: 15px;
     color: #333;
-    margin-left: 20px;
+    text-align: center;
+}
+
+/* スライド */
+.keen-slider img {
+    max-width: 1600px;
+    width: 100%;
 }
 
 /* ボタン共通 */
@@ -40,9 +45,40 @@ body {
     padding: 10px 15px;
     line-height: 20px;
     cursor: pointer;
-    background-color: #aaa;
-    border: 1px #eee solid;
+    /* background-color: #aaa; */
+    /* border: 1px #eee solid; */
     border-radius: 4px;
+}
+
+.animoButtonOverlay {
+    display: inline-block;
+    padding: 10px 25px;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+}
+.animoButtonOverlay::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 5px;
+    right: 5px;
+    background-color: #f39c12;
+    z-index: -1;
+    transition: transform 0.2s ease-in-out;
+}
+.animoButtonOverlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #474e51;
+}
+.animoButtonOverlay:hover::before {
+    transform: translate(6px, -4px);
 }
 
 /* スライドショー */
@@ -55,5 +91,25 @@ body {
     display: block;
     margin: 0 auto 10px;
     width: 300px;
+    height: 300px;
+}
+
+/* Recommemdation */
+.recommend {
+    text-align: center;
+}
+#recommend_contents {
+    display: none;
+}
+
+#recommend_contents p {
+    margin-top: 30px;
+    color: orangered;
+    font-size: large;
+    font-weight: bold;
+}
+
+.recommend img {
+    width: 400px;
     height: 300px;
 }

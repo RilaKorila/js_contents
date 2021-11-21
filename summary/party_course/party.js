@@ -51,3 +51,35 @@ function startStopSlide() {
 // startBtn.onclick = startSlide
 // stopBtn.onclick = stopSlide
 startStop.onclick = startStopSlide
+
+// おすすめ音楽
+
+function tellRecommend() {
+    var fortune_num = Math.floor(Math.random() * 4)
+
+    var resultText, resultImg
+    if (fortune_num === 0) {
+        resultText = "Happy Birthday"
+        resultImg = "./imgs/party.jpg"
+    } else if (fortune_num === 1) {
+        resultText = "Make you happy"
+        resultImg = "./imgs/party2.jpg"
+    } else if (fortune_num === 2) {
+        resultText = "Chopstick"
+        resultImg = "./imgs/chopstick.jpg"
+    } else {
+        resultText = "Take a picture"
+        resultImg = "./imgs/takeapicture.jpg"
+    }
+
+    document
+        .getElementById("recommend_music_img")
+        .setAttribute("src", resultImg)
+    document.getElementById("recommend_music_txt").textContent = resultText
+}
+
+var recommend_btn = document.getElementById("recommend_music")
+recommend_btn.onclick = () => {
+    tellRecommend()
+    document.getElementById("recommend_contents").style.display = "block"
+}
