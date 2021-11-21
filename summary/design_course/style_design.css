@@ -1,4 +1,28 @@
+* {
+    box-sizing: border-box;
+}
 .main-container {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* カード */
+.card {
+    width: 28%;
+    text-align: center;
+    background-color: bisque;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #666;
+    padding: 20px;
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 60%;
 }
