@@ -1,9 +1,31 @@
 body {
     background-color: aliceblue;
 }
+
+/* タイトル */
+.container {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.top-wrapper {
+    padding: 100px 40px 200px 40px;
+    background-image: url(./imgs/business.jpg);
+    background-size: cover;
+    color: white;
+    text-align: start;
+}
+
+.top-wrapper h1 {
+    opacity: 0.7;
+    font-size: 45px;
+    letter-spacing: 3px;
+}
+
 .main-container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .wrapper {
