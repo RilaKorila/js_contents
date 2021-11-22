@@ -46,6 +46,12 @@
                 </div>
             </div>
 
+            <h2>♪ Bingo ♪</h2>
+            <!-- ビンゴ -->
+            <a class="btn animoTextLeft" href="./bingo.html"
+                >Bingoを始めよう！</a
+            >
+
             <h2>♪ Recommend ♪</h2>
             <div class="recommend">
                 <p>ボタンを押したらおすすめの音楽が出てくるよ！</p>
@@ -58,23 +64,8 @@
                     <img id="recommend_music_img" />
                 </div>
             </div>
-
-            <h2>♪ Bingo ♪</h2>
-            <!-- ビンゴ -->
-            <div class="bingo-wrapper">
-                <div id="result" class="result centering"></div>
-                <div class="wrapper-button">
-                    <button id="button" class="button">START</button>
-                </div>
-                <ul id="number" class="number"></ul>
-            </div>
         </div>
 
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"
-        ></script>
         <script src="party.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js"></script>
         <script>
@@ -96,49 +87,6 @@
                 created: () => {
                     autoplay(true)
                 },
-            })
-        </script>
-        <script>
-            $(function () {
-                // 1~75まで、bingoの数字一覧を作成
-                var max = 75
-                var bingo = []
-                for (var i = 1; i <= max; i++) {
-                    bingo.push(i)
-                }
-
-                var timer
-                var random
-                // START・STOPボタンクリックのイベント
-                $("#button").on("click", function () {
-                    // START
-                    if ($(this).text() == "START") {
-                        // ボタンのテキストを"STOP"に変更
-                        $(this).text("STOP")
-
-                        // ルーレットタイマーを設定
-                        timer = setInterval(function () {
-                            random = Math.floor(Math.random() * bingo.length)
-                            $("#result").text(bingo[random])
-                        }, 10)
-                        // STOP
-                    } else {
-                        // ボタンのテキストを"START"に変更
-                        $(this).text("START")
-
-                        // ルーレットタイマーを停止
-                        clearInterval(timer)
-
-                        // 停止時の数字を結果に反映
-                        var result = bingo[random]
-                        // 一覧から削除（次のルーレットに表示させないため）
-                        bingo.splice(random, 1)
-
-                        // 数字一覧に追加
-                        $("#number").append($("<li>").text(result))
-                        $("#number li").addClass("centering")
-                    }
-                })
             })
         </script>
     </body>
