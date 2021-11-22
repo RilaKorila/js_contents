@@ -28,6 +28,7 @@ body {
     margin: 50px auto;
 }
 .main-container h2 {
+    margin-top: 50px;
     padding-left: 15px;
     color: #333;
     text-align: center;
@@ -102,14 +103,82 @@ body {
     display: none;
 }
 
-#recommend_contents p {
-    margin-top: 30px;
+#recommend_contents h2 {
+    margin-top: 10px;
     color: orangered;
-    font-size: large;
     font-weight: bold;
 }
 
+#recommend_contents p {
+    margin-top: 30px;
+    color: orangered;
+    font-weight: bold;
+}
 .recommend img {
     width: 400px;
     height: 300px;
+}
+
+/* ビンゴ */
+.bingo-wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* ルーレット */
+.result {
+    border: solid 1px #b78d4a;
+    border-radius: 50%;
+    font-size: 70px;
+
+    margin-bottom: 20px;
+    width: 130px;
+    height: 130px;
+}
+
+/* 出た数字の一覧 */
+.number {
+    color: #b78d4a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 auto;
+    list-style: none;
+    width: 80%;
+    padding: 0;
+}
+
+.number li {
+    background-color: #b78d4a;
+    color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    margin: 4px;
+    width: 40px;
+}
+
+/* ボタン */
+.wrapper-button {
+    padding: 20px 0;
+}
+
+.button {
+    font-size: 30px;
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #b78d4a 0%, #d4bb92 100%);
+}
+
+.button:hover {
+    background-image: linear-gradient(45deg, #d4bb92 0%, #fde0a5 100%);
 }
