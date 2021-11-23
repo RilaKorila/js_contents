@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>bingo</title>
+        <link rel="stylesheet" href="./style_party.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css"
+        />
+    </head>
+
+    <body>
+        <div class="top-wrapper">
+            <div class="container">
+                <h1>Lets Start Bingo Game</h1>
+                <p>一緒に楽しみましょう！！</p>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <a class="btn animoBorderLeftRight" href="./index.html"
+                >Homeに戻る</a
+            >
+            <h2>♪ Bingo ♪</h2>
+            <!-- ビンゴ -->
+            <div class="bingo-wrapper">
+                <div id="result" class="result centering"></div>
+                <div class="wrapper-button">
+                    <button id="button" class="button">START</button>
+                </div>
+                <ul id="number" class="number"></ul>
+            </div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <script src="bingo.js"></script>
+    </body>
+</html>

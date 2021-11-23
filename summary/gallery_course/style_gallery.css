@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+/* タイトル */
+.container {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.top-wrapper {
+    padding: 100px 40px 150px 40px;
+    background-image: url(./imgs/header_img.jpg);
+    background-size: cover;
+    color: black;
+    opacity: 0.7;
+    text-align: start;
+}
+
+.top-wrapper h1 {
+    font-size: 45px;
+    letter-spacing: 3px;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.main-container h2 {
+    border-left: 5px solid orangered;
+    padding-left: 15px;
+    color: #333;
+    margin-left: 20px;
+}
+
+/* ギャラリー */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+/* カード */
+.card {
+    width: 28%;
+    text-align: center;
+    background-color: bisque;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #666;
+    padding: 20px;
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 60%;
+}
