@@ -4,7 +4,7 @@ HTML&CSS で作成した静的なホームページに、JavaScrpt を使って�
 
 ## 開発環境
 
--   eslint を導入してみました。カンマ、セミコロンについても試しに制限かけてみます。（JS を使う予定だが、TS の練習もしたいので、typescript-eslint も入れてみた。まずは JS で書いた後、余裕があれば TS に書き換える）
+-   eslint を導入。カンマ、セミコロンについても試しに制限をかける。（JS を使う予定だが、TS の練習もしたいので、typescript-eslint も入れた。まずは JS で書いた後、余裕があれば TS に書き換える）
 
 -   prettier も導入。ただ、コマンドライン`npx prettier --write <filename/dirname>`からしか今は実行できない状態。VSCode のパッケージをうまく設定して、保存したら自動的に Prettier がきくようにしたい
 
