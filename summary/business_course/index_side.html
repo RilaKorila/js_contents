@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>business course</title>
+        <link rel="stylesheet" href="./style_business_side.css" />
+    </head>
+
+    <body>
+        <div class="top-wrapper">
+            <div class="container">
+                <h1>Business Course</h1>
+                <h1>定期演奏会のお知らせ</h1>
+
+                <p>Music Club Waffle では、年に1回演奏会を開催します</p>
+                <p>ぜひお越しください</p>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <div class="left-column">
+                <h2>Business Course</h2>
+                <div class="contents">
+                    <h3>開催日時</h3>
+                    <p>2021年12月26日</p>
+                    <h3>プログラム</h3>
+                    <ul>
+                        <li>ピアノの部</li>
+                        <li>バイオリンの部</li>
+                        <li>休憩</li>
+                        <li>全体合奏</li>
+                    </ul>
+                    <h3>みどころ</h3>
+                    <p>毎日たくさん練習した成果を、多くの方に届けたいです。</p>
+                    <p>高校3年生は、これが最後の発表会です。これまでの想いをこの発表会に込めます。</p>
+                    <p>バイオリンの部では、私たちClubの代表がソロパートを演奏します。<br>
+                    たくさん練習したので、是非楽しみにしてください</p>
+
+
+                    
+                    <h2 style="margin-top: 200px">Weather</h2>
+                    <div class="weather">
+                        <div class="summary">
+                            <h3>東京の概要</h3>
+                            <table>
+                                <tr>
+                                    <th>発表者</th>
+                                    <td id="publishingOffice"></td>
+                                </tr>
+                                <tr>
+                                    <th>報告日時</th>
+                                    <td id="reportDatetime"></td>
+                                </tr>
+                                <tr>
+                                    <th>対象地域</th>
+                                    <td id="targetArea"></td>
+                                </tr>
+                                <tr>
+                                    <th>ヘッドライン</th>
+                                    <td id="headlineText"></td>
+                                </tr>
+                                <tr>
+                                    <th>詳細</th>
+                                    <td id="text"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="forecast">
+                            <!-- 地域コードで選択できるようにしたい -->
+                            <h3>東京の天気予報</h3>
+                            <table>
+                                <tr>
+                                    <th>今日</th>
+                                    <td id="today_weather"></td>
+                                </tr>
+                                <tr>
+                                    <th>明日</th>
+                                    <td id="tomorrow_weather"></td>
+                                </tr>
+                                <tr>
+                                    <th>明後日</th>
+                                    <td id="dayAfterTomorrow_weather"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="contents">
+                    <h2>カレンダー</h2>
+                    <!-- カレンダー -->
+                    <div class="calendar">
+                        <!-- ボタンクリックで月移動 -->
+                        <div class="calendar-header">
+                            <a id="prev-btn"></a>
+                            <h2 id="calendar-title"></h2>
+                            <a id="next-btn"></a>
+                        </div>
+                        <!-- カレンダー本体 -->
+                        <div id="calendar-main"></div>
+                    </div>
+                    <!-- アナログ時計 -->
+                    <h2>アナログ時計</h2>
+                    <div class="clock-container">
+                        <div class="clock">
+                            <div class="needle" id="hour"></div>
+                            <div class="needle" id="minute"></div>
+                            <div class="center-point"></div>
+                        </div>
+                    </div>
+                    <div class="wrapper-sub"></div>
+                    <div class="wrapper">
+                        <div class="wrapper-sub"></div>
+                    </div>
+                </div>
+
+                <div class="contents">
+                    <h3>calculator</h3>
+                    <div class="wrapper">
+                        <div class="dentaku">
+                            <input type="text" id="result" />
+                            <div>
+                                <a class="edit-btn">1</a>
+                                <a class="edit-btn">2</a>
+                                <a class="edit-btn">3</a>
+                                <a class="edit-btn">+</a>
+                            </div>
+                            <div>
+                                <a class="edit-btn">4</a>
+                                <a class="edit-btn">5</a>
+                                <a class="edit-btn">6</a>
+                                <a class="edit-btn">-</a>
+                            </div>
+                            <div>
+                                <a class="edit-btn">7</a>
+                                <a class="edit-btn">8</a>
+                                <a class="edit-btn">9</a>
+                                <a class="edit-btn">/</a>
+                            </div>
+                            <div>
+                                <a class="edit-btn">0</a>
+                                <a class="edit-btn">.</a>
+                                <a class="edit-btn">*</a>
+                                <a id="calc-btn">=</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="business.js"></script>
+    </body>
+</html>
