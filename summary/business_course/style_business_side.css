@@ -192,6 +192,10 @@ body {
     background: #fff5e5; /*背景色*/
 }
 
+#whether_icon {
+    text-align: center;
+    margin: 0 auto;
+}
 /* 電卓 */
 .dentaku {
     background-color: #feb396;
