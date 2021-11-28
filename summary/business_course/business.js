@@ -86,6 +86,25 @@ prevBtn.onclick = prev
 const nextBtn = document.getElementById("next-btn")
 nextBtn.onclick = next
 
+// 開催日までのカウントダウン
+var currentDate = new Date()
+var targetDate = new Date("2022/3/20");
+// 「1970年1月1日0時0分0秒」からの経過ミリ秒
+var diffMSec = targetDate.getTime() - currentDate.getTime();
+var diffDays = diffMSec / ( 1000 * 60 * 60 * 24 );
+var showDays = Math.ceil( diffDays ); // 小数点以下を切り上げる
+
+// 表示
+var Msg;
+if( showDays >= 0 ) {
+    Msg = "開催まであと " + showDays + "日!";
+}
+else {
+    Msg = "イベントは " + (showDays * -1) + "日前に終了!";
+}
+
+document.getElementById("countdown").textContent = Msg;
+
 // ---- 時計
 // 要素を取得する
 const hourEl = document.getElementById("hour")

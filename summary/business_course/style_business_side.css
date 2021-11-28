@@ -120,6 +120,13 @@ body {
     color: green;
 }
 
+#countdown{
+    text-align: center;
+    /* 太字にする */
+    font-weight: bold;
+    color: #444;
+}
+
 /* アナログ時計 */
 .clock-container {
     display: flex;
