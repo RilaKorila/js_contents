@@ -120,7 +120,7 @@ body {
     color: green;
 }
 
-#countdown{
+#countdown {
     text-align: center;
     /* 太字にする */
     font-weight: bold;
@@ -181,24 +181,6 @@ body {
 }
 
 /* 天気 */
-.weather {
-    text-align: center;
-    color: #666;
-}
-.weather table {
-    margin: 10px auto;
-    width: 80%;
-    text-align: center;
-    /* 表の外側にわく */
-    border: solid 1px black;
-}
-
-.weather th {
-    padding: 5px;
-    width: 20%;
-    background: #fff5e5; /*背景色*/
-}
-
 #whether_icon {
     text-align: center;
     margin: 0 auto;
