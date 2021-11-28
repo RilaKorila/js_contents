@@ -10,7 +10,7 @@ const newImgList = [
 function slide_time() {
     // numにはおなじ0から3がランダムに入る
     // 3 = (参加者が埋める:new_img_listの長さ) TRY
-    var num = Math.floor(Math.random() * newImgList.length)
+    let num = Math.floor(Math.random() * newImgList.length)
     // 要素を取得
     const slideImg = document.getElementById("slide-show")
     // 要素に対して、実行(今回は、属性を付与)
@@ -24,7 +24,7 @@ function slide_time() {
 // const startBtn = document.getElementById("start-btn")
 // const stopBtn = document.getElementById("stop-btn")
 const startStop = document.getElementById("start-stop-btn")
-var timerID
+let timerID
 
 // function startSlide() {
 //     console.log("start")
@@ -38,7 +38,7 @@ var timerID
 // ボタンを1つにする ->> 分岐
 // TRY 分岐の練習：if文は自分で
 function startStopSlide() {
-    var text = document.getElementById("start-stop-btn").innerText
+    let text = document.getElementById("start-stop-btn").innerText
     if (text === "start") {
         document.getElementById("start-stop-btn").innerText = "stop"
         timerID = setInterval(slide_time, 2000)
@@ -53,7 +53,7 @@ function startStopSlide() {
 startStop.onclick = startStopSlide
 
 // ------------------  iTyped  ------------------
-var AM_PM = new Date().getHours()
+let AM_PM = new Date().getHours()
 if (AM_PM > 12) {
     // 午後
     console.log(AM_PM, "at  nigiht")
@@ -96,7 +96,7 @@ fetch(WEATHER_FORECAST)
         return response.json()
     })
     .then(function (weather) {
-        var tokyo = weather[0].timeSeries[0].areas[0]
+        let tokyo = weather[0].timeSeries[0].areas[0]
         // tokyo.weathers: [今日, 明日, 明後日]の天気
         // tokyo.winds: [今日, 明日, 明後日]の風向き
         // tokyo.waves: [今日, 明日, 明後日]の風速
@@ -110,25 +110,25 @@ fetch(WEATHER_FORECAST)
 
 // ------------------  時間系  ------------------
 // ---- テキストの時間表示
-var currentTime = new Date()
+let currentTime = new Date()
 
 function showTime() {
-    var currentHour = currentTime.getHours()
-    var currentMinutes = currentTime.getMinutes()
+    let currentHour = currentTime.getHours()
+    let currentMinutes = currentTime.getMinutes()
 
-    var timeInfo =
+    let timeInfo =
         "ただいまの時間：" + currentHour + "時" + currentMinutes + "分"
     document.getElementById("now").innerHTML = timeInfo
 }
 
 function showDate() {
-    var currentYear = currentTime.getFullYear()
-    var currentMonth = currentTime.getMonth()
-    var currentDate = currentTime.getDate()
-    var currentDay = currentTime.getDay()
+    let currentYear = currentTime.getFullYear()
+    let currentMonth = currentTime.getMonth()
+    let currentDate = currentTime.getDate()
+    let currentDay = currentTime.getDay()
     const weeks = ["日", "月", "火", "水", "木", "金", "土"]
 
-    var todayInfo =
+    let todayInfo =
         "今日：" +
         currentYear +
         "月" +
@@ -146,8 +146,8 @@ setInterval(showTime, 1000)
 // ---- カレンダー
 const week = ["日", "月", "火", "水", "木", "金", "土"]
 const today = new Date()
-var year = today.getFullYear()
-var month = today.getMonth() + 1
+let year = today.getFullYear()
+let month = today.getMonth() + 1
 
 // カレンダー中身の作成
 // ここを、createElementで書き換えるか悩む
@@ -161,14 +161,14 @@ function createCalendar(year, month) {
     const lastDate = new Date(year, month, 0)
     const lastDayCount = lastDate.getDate()
     // 日にちのカウント
-    var dayCount = 1
+    let dayCount = 1
 
     // タイトルの作成
     const title = document.getElementById("calendar-title")
     title.textContent = year + "/" + month
 
     // HTML要素を格納する変数
-    var calendarHtml = ""
+    let calendarHtml = ""
     calendarHtml += "<table>"
 
     // 曜日の行を作成
@@ -274,9 +274,9 @@ setInterval(setTime, 1000)
 
 // ------------------  占い(3種)  ------------------
 function uranai() {
-    var fortune_num = Math.floor(Math.random() * 4)
+    let fortune_num = Math.floor(Math.random() * 4)
 
-    var resultText
+    let resultText
     if (fortune_num === 0) {
         resultText = "大吉"
     } else if (fortune_num === 1) {
@@ -294,7 +294,7 @@ function uranai() {
 // uranaiBtn.onclick = uranai
 
 function lucky() {
-    var fortune_num = Math.floor(Math.random() * 4)
+    let fortune_num = Math.floor(Math.random() * 4)
     const resultImg = document.getElementById("lucky_img")
 
     if (fortune_num === 0) {
@@ -327,7 +327,7 @@ checkButton.addEventListener(
             }
         }
 
-        var res
+        let res
         if (checkValue === "ohitsuji") {
             res = "水玉のはんかち"
         } else if (checkValue === "uo") {
@@ -363,14 +363,14 @@ function scroll_event() {
 
 // ------------------  モーダル表示  ------------------
 // Get the modal
-var modal = document.getElementById("myModal")
+let modal = document.getElementById("myModal")
 
 // Get the button that opens the modal
-var btn = document.getElementById("myModalBtn")
-var imgBtn = document.getElementById("myModalImg")
+let btn = document.getElementById("myModalBtn")
+let imgBtn = document.getElementById("myModalImg")
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0]
+let span = document.getElementsByClassName("close")[0]
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
@@ -395,13 +395,13 @@ window.onclick = function (event) {
 // ------------------  popup表示  ------------------
 // When the user clicks on <div>, open the popup
 function showPopup() {
-    var popup = document.getElementById("myPopup")
+    let popup = document.getElementById("myPopup")
 
     popup.classList.toggle("show")
 }
 
 // ------------------  電卓  ------------------
-var result = document.getElementById("result")
+let result = document.getElementById("result")
 function edit(elem) {
     result.value = result.value + elem.innerText
 }
@@ -410,7 +410,7 @@ function calc() {
 }
 
 const btns = document.getElementsByClassName("edit-btn")
-for (var i = 0; i < btns.length; i++) {
+for (let i = 0; i < btns.length; i++) {
     btns[i].onclick = function (e) {
         edit(e.target)
     }

@@ -10,8 +10,8 @@ const new_img_list = [
     "../imgs/orange.png",
     "../imgs/cherry.png",
 ]
-var isMovingSldeShow = true
-var timerID = 0
+let isMovingSldeShow = true
+let timerID = 0
 
 function slide_time() {
     // 高校生向け(順番に表示)
@@ -23,7 +23,7 @@ function slide_time() {
     // }
 
     // ランダム表示
-    var num = Math.floor(Math.random() * new_img_list.length)
+    let num = Math.floor(Math.random() * new_img_list.length)
     document.getElementById("slide_img").src = new_img_list[num]
     // document.getElementById("slide_img").src = img_list[num===3? num=0 : num++]
 }

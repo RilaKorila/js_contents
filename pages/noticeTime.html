@@ -16,13 +16,13 @@
         </div>
 
         <script>
-            var currentTime = new Date()
+            let currentTime = new Date()
 
             function showTime() {
-                var currentHour = currentTime.getHours()
-                var currentMinutes = currentTime.getMinutes()
+                let currentHour = currentTime.getHours()
+                let currentMinutes = currentTime.getMinutes()
 
-                var timeInfo =
+                let timeInfo =
                     "ただいまの時間：" +
                     currentHour +
                     "時" +
@@ -32,13 +32,13 @@
             }
 
             function showDate() {
-                var currentYear = currentTime.getFullYear()
-                var currentMonth = currentTime.getMonth()
-                var currentDate = currentTime.getDate()
-                var currentDay = currentTime.getDay()
+                let currentYear = currentTime.getFullYear()
+                let currentMonth = currentTime.getMonth()
+                let currentDate = currentTime.getDate()
+                let currentDay = currentTime.getDay()
                 const weeks = ["日", "月", "火", "水", "木", "金", "土"]
 
-                var todayInfo =
+                let todayInfo =
                     "今日：" +
                     currentYear +
                     "月" +

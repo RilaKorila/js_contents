@@ -1,8 +1,8 @@
 // ---- カレンダー
 const week = ["日", "月", "火", "水", "木", "金", "土"]
 const today = new Date()
-var year = today.getFullYear()
-var month = today.getMonth() + 1
+let year = today.getFullYear()
+let month = today.getMonth() + 1
 
 // カレンダー中身の作成
 // ここを、createElementで書き換えるか悩む
@@ -16,14 +16,14 @@ function createCalendar(year, month) {
     const lastDate = new Date(year, month, 0)
     const lastDayCount = lastDate.getDate()
     // 日にちのカウント
-    var dayCount = 1
+    let dayCount = 1
 
     // タイトルの作成
     const title = document.getElementById("calendar-title")
     title.textContent = year + "/" + month
 
     // HTML要素を格納する変数
-    var calendarHtml = ""
+    let calendarHtml = ""
     calendarHtml += "<table>"
 
     // 曜日の行を作成
@@ -159,7 +159,7 @@ fetch(WEATHER_FORECAST)
         return response.json()
     })
     .then(function (weather) {
-        var tokyo = weather[0].timeSeries[0].areas[0]
+        let tokyo = weather[0].timeSeries[0].areas[0]
         // tokyo.weathers: [今日, 明日, 明後日]の天気
         // tokyo.winds: [今日, 明日, 明後日]の風向き
         // tokyo.waves: [今日, 明日, 明後日]の風速
@@ -175,7 +175,7 @@ fetch(WEATHER_FORECAST)
     })
 
 // ------------------  電卓  ------------------
-var result = document.getElementById("result")
+let result = document.getElementById("result")
 function edit(elem) {
     result.value = result.value + elem.innerText
 }
@@ -184,7 +184,7 @@ function calc() {
 }
 
 const btns = document.getElementsByClassName("edit-btn")
-for (var i = 0; i < btns.length; i++) {
+for (let i = 0; i < btns.length; i++) {
     btns[i].onclick = function (e) {
         edit(e.target)
     }

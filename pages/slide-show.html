@@ -22,7 +22,7 @@
             ]
 
             function slide_time() {
-                var num = Math.floor(Math.random() * new_img_list.length)
+                let num = Math.floor(Math.random() * new_img_list.length)
                 document
                     .getElementById("main-img")
                     .setAttribute("src", new_img_list[num])
@@ -30,7 +30,7 @@
             // setInterval(slide_time, 1000)
             const startBtn = document.getElementById("start-btn")
             const stopBtn = document.getElementById("stop-btn")
-            var timerID
+            let timerID
 
             function startSlide() {
                 console.log("start")

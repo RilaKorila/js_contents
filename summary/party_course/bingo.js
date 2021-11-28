@@ -1,13 +1,13 @@
 $(function () {
     // 1~75まで、bingoの数字一覧を作成
-    var max = 75
-    var bingo = []
-    for (var i = 1; i <= max; i++) {
+    let max = 75
+    let bingo = []
+    for (let i = 1; i <= max; i++) {
         bingo.push(i)
     }
 
-    var timer
-    var random
+    let timer
+    let random
     // START・STOPボタンクリックのイベント
     $("#button").on("click", function () {
         // START
@@ -29,7 +29,7 @@ $(function () {
             clearInterval(timer)
 
             // 停止時の数字を結果に反映
-            var result = bingo[random]
+            let result = bingo[random]
             // 一覧から削除（次のルーレットに表示させないため）
             bingo.splice(random, 1)
 

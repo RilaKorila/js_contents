@@ -17,7 +17,7 @@ Make the "Click me!" button move when the visitor clicks it:
 // }
 
 // リストもできたらいいけれど、厳しいかもな...
-var greeting = ["こんにちは！", "Hello", "こんばんは", "Good Morning"]
+let greeting = ["こんにちは！", "Hello", "こんばんは", "Good Morning"]
 
 // forは自分で描いてもらう
 for (let i = 0; i < 10; i++) {
@@ -25,7 +25,7 @@ for (let i = 0; i < 10; i++) {
     console.log("hello;")
 }
 
-var today = new Date()
+let today = new Date()
 
 document.getElementById("time").textContent = today
 // 表を作っておいて、today.getMonth()のように、なにを表示するか選ぶ

@@ -117,14 +117,14 @@
 
             // ------------------  モーダル表示  ------------------
             // Get the modal
-            var modal = document.getElementById("myModal")
+            let modal = document.getElementById("myModal")
 
             // Get the button that opens the modal
-            var btn = document.getElementById("myModalBtn")
-            var imgBtn = document.getElementById("myModalImg")
+            let btn = document.getElementById("myModalBtn")
+            let imgBtn = document.getElementById("myModalImg")
 
             // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0]
+            let span = document.getElementsByClassName("close")[0]
 
             // When the user clicks on the button, open the modal
             btn.onclick = function () {
@@ -149,7 +149,7 @@
             // ------------------  popup表示  ------------------
             // When the user clicks on <div>, open the popup
             function showPopup() {
-                var popup = document.getElementById("myPopup")
+                let popup = document.getElementById("myPopup")
 
                 popup.classList.toggle("show")
             }

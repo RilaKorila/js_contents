@@ -81,7 +81,7 @@
             ]
 
             function slide_time() {
-                var num = Math.floor(Math.random() * newImgList.length)
+                let num = Math.floor(Math.random() * newImgList.length)
                 const slideImg = document.getElementById("slide-show")
                 slideImg.setAttribute("src", newImgList[num])
             }
@@ -89,11 +89,11 @@
             const startBtn = document.getElementById("start-btn")
             const stopBtn = document.getElementById("stop-btn")
             const startStop = document.getElementById("start-stop-btn")
-            var timerID
+            let timerID
 
             function startStopSlide() {
                 console.log("start stop")
-                var text = document.getElementById("start-stop-btn").innerText
+                let text = document.getElementById("start-stop-btn").innerText
                 if (text === "start") {
                     document.getElementById("start-stop-btn").innerText = "stop"
                     timerID = setInterval(slide_time, 2000)

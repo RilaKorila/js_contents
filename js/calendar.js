@@ -1,7 +1,7 @@
 const week = ["日", "月", "火", "水", "木", "金", "土"]
 const today = new Date()
-var year = today.getFullYear()
-var month = today.getMonth() + 1
+let year = today.getFullYear()
+let month = today.getMonth() + 1
 
 function creatCalendarTitle(year, month) {
     return year + "/" + month
@@ -16,9 +16,9 @@ function creatCalendar(year, month) {
     const lastDate = new Date(year, month, 0)
     const lastDayCount = lastDate.getDate()
     // 日にちのカウント
-    var dayCount = 1
+    let dayCount = 1
     // HTML要素を格納する変数
-    var calendarHtml = ""
+    let calendarHtml = ""
 
     calendarHtml += "<table>"
 

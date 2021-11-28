@@ -1,7 +1,7 @@
 function uranai() {
-    var fortune_num = Math.floor(Math.random() * 4)
+    let fortune_num = Math.floor(Math.random() * 4)
 
-    var resultText
+    let resultText
     if (fortune_num === 0) {
         resultText = "大吉"
     } else if (fortune_num === 1) {
@@ -37,7 +37,7 @@ const star_uranai = {
 // 要素の追加を簡素化
 const addElement = function (tag, contents, myClassName = "", myIdName = "") {
     if (tag === "div") {
-        var divElem = document.createElement("div")
+        let divElem = document.createElement("div")
         // class名, id名を付与
         if (myClassName !== undefined) {
             divElem.setAttribute("class", myClassName)
@@ -50,7 +50,7 @@ const addElement = function (tag, contents, myClassName = "", myIdName = "") {
         divElem.innerHTML = contents
         document.body.append(divElem)
     } else {
-        var name = document.createElement(tag)
+        let name = document.createElement(tag)
         name.innerText = contents
 
         if (myClassName !== undefined) {
@@ -68,7 +68,7 @@ const addElement = function (tag, contents, myClassName = "", myIdName = "") {
 const starArray = star_uranai["stars"]
 addElement("h3", "今月の星座占い")
 
-var contents = ""
+let contents = ""
 for (let i = 0; i < starArray.length; i++) {
     contents +=
         `<div class="form-check">

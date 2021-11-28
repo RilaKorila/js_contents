@@ -38,7 +38,7 @@
         </div>
 
         <script>
-            var result = document.getElementById("result")
+            let result = document.getElementById("result")
             function edit(elem) {
                 result.value = result.value + elem.innerText
             }
@@ -48,7 +48,7 @@
             }
 
             const btns = document.getElementsByClassName("edit-btn")
-            for (var i = 0; i < btns.length; i++) {
+            for (let i = 0; i < btns.length; i++) {
                 console.log(btns[i].innerText)
                 btns[i].onclick = function (e) {
                     console.log(e.target.innerText)
@@ -72,13 +72,13 @@
             <p id="checked"></p>
         </div>
         <script>
-            var checkedNumber = []
+            let checkedNumber = []
             console.log(numberPool)
             // ランダムで数字を選ぶ
             function pickUpNumber(min, max, numberPool) {
                 // ランダムで削除場所を選ぶ
-                var num = Math.random() * numberPool.length
-                var pickedNumber = numberPool.splice(num, 1)
+                let num = Math.random() * numberPool.length
+                let pickedNumber = numberPool.splice(num, 1)
 
                 document.getElementById("result").innerText = pickedNumber
                 checkedNumber.push(pickedNumber)
@@ -89,7 +89,7 @@
             shuffleBtn.onclick = function () {
                 const min = Number(document.getElementById("min").value)
                 const max = Number(document.getElementById("max").value) + 1
-                var numberPool = Array.from(
+                let numberPool = Array.from(
                     Array(max - min).keys(),
                     (x) => x + min
                 )

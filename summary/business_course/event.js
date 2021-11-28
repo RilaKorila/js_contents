@@ -1,8 +1,8 @@
 // ---- カレンダー
 const week = ["日", "月", "火", "水", "木", "金", "土"]
 const today = new Date()
-var year = today.getFullYear()
-var month = today.getMonth() + 1
+let year = today.getFullYear()
+let month = today.getMonth() + 1
 
 // カレンダー中身の作成
 // ここを、createElementで書き換えるか悩む
@@ -16,14 +16,14 @@ function createCalendar(year, month) {
     const lastDate = new Date(year, month, 0)
     const lastDayCount = lastDate.getDate()
     // 日にちのカウント
-    var dayCount = 1
+    let dayCount = 1
 
     // タイトルの作成
     const title = document.getElementById("calendar-title")
     title.textContent = year + "/" + month
 
     // HTML要素を格納する変数
-    var calendarHtml = ""
+    let calendarHtml = ""
     calendarHtml += "<table>"
 
     // 曜日の行を作成
@@ -87,15 +87,15 @@ const nextBtn = document.getElementById("next-btn")
 nextBtn.onclick = next
 
 // 開催日までのカウントダウン
-var currentDate = new Date()
-var targetDate = new Date("2022/3/20")
+let currentDate = new Date()
+let targetDate = new Date("2022/3/20")
 // 「1970年1月1日0時0分0秒」からの経過ミリ秒
-var diffMSec = targetDate.getTime() - currentDate.getTime()
-var diffDays = diffMSec / (1000 * 60 * 60 * 24)
-var showDays = Math.ceil(diffDays) // 小数点以下を切り上げる
+let diffMSec = targetDate.getTime() - currentDate.getTime()
+let diffDays = diffMSec / (1000 * 60 * 60 * 24)
+let showDays = Math.ceil(diffDays) // 小数点以下を切り上げる
 
 // 表示
-var Msg
+let Msg
 if (showDays >= 0) {
     Msg = "開催まであと " + showDays + "日!"
 } else {
@@ -159,7 +159,7 @@ fetch(WEATHER_FORECAST)
         return response.json()
     })
     .then(function (weather) {
-        var tokyo = weather[0].timeSeries[0].areas[0]
+        let tokyo = weather[0].timeSeries[0].areas[0]
         // tokyo.weathers: [今日, 明日, 明後日]の天気
         // tokyo.winds: [今日, 明日, 明後日]の風向き
         // tokyo.waves: [今日, 明日, 明後日]の風速
@@ -171,7 +171,7 @@ fetch(WEATHER_FORECAST)
     })
 
 function get_weather(weather_txt) {
-    var icon_area = document.getElementById("whether_icon")
+    let icon_area = document.getElementById("whether_icon")
 
     if (weather_txt === "晴れ") {
         icon_area.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
@@ -196,7 +196,7 @@ function get_weather(weather_txt) {
 }
 
 // ------------------  電卓  ------------------
-var result = document.getElementById("result")
+let result = document.getElementById("result")
 function edit(elem) {
     result.value = result.value + elem.innerText
 }
@@ -205,7 +205,7 @@ function calc() {
 }
 
 const btns = document.getElementsByClassName("edit-btn")
-for (var i = 0; i < btns.length; i++) {
+for (let i = 0; i < btns.length; i++) {
     btns[i].onclick = function (e) {
         edit(e.target)
     }
