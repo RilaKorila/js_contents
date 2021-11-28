@@ -195,6 +195,7 @@ body {
 #whether_icon {
     text-align: center;
     margin: 0 auto;
+    color: orangered;
 }
 /* 電卓 */
 .dentaku {
