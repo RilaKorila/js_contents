@@ -162,7 +162,8 @@ input {
 
 /* Subheading */
 h2 {
-    color: #2800ff;
+    margin-top: 50px;
+    color: olivedrab;
 }
 
 /* Interactive image */
