@@ -37,3 +37,9 @@ for(let i=0; i++; i<length(gallery_data)){
     document.getElementById("gallery-name")[i].textContent = gallery_data[i].name;
     document.getElementById("gallery-text")[i].textContent = gallery_data[i].text;
 }
+
+
+//今日の日付表示
+// 参考：https://www.sejuku.net/blog/30171
+const today = new Date()
+document.getElementById("today").textContent = "今日の日付：" + today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate()
