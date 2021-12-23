@@ -22,4 +22,10 @@ img {
     line-height: 50px;
     cursor: pointer;
     background-color: antiquewhite;
+    margin: 10px;
+}
+
+.btn-area{
+    display: flex;
+    justify-content: center;
 }
