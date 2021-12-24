@@ -19,27 +19,37 @@ function scroll_event() {
     }
 }
 
-
 // JSONでデータを表示
-const gallery_data = [{
-    "name":"Waffle Cafe",
-    "text": "落ち着いたデザインがおしゃれなカフェ",
-    "picture": "cafe1.jpg",
-},
-{
-    "name": "タイトル",
-    "text": "説明文",
-    "picture": "画像のファイル名",
-}]
+const gallery_data = [
+    {
+        name: "Waffle Cafe",
+        text: "落ち着いたデザインがおしゃれなカフェ",
+        picture: "cafe1.jpg",
+    },
+    {
+        name: "タイトル",
+        text: "説明文",
+        picture: "画像のファイル名",
+    },
+]
 
-for(let i=0; i++; i<length(gallery_data)){
-    document.getElementsByClassName("gallery-picture")[i].setAttribute("src", "./imgs/" + gallery_data[i].picture); 
-    document.getElementById("gallery-name")[i].textContent = gallery_data[i].name;
-    document.getElementById("gallery-text")[i].textContent = gallery_data[i].text;
+for (let i = 0; i++; i < length(gallery_data)) {
+    document
+        .getElementsByClassName("gallery-picture")
+        [i].setAttribute("src", "./imgs/" + gallery_data[i].picture)
+    document.getElementById("gallery-name")[i].textContent =
+        gallery_data[i].name
+    document.getElementById("gallery-text")[i].textContent =
+        gallery_data[i].text
 }
-
 
 //今日の日付表示
 // 参考：https://www.sejuku.net/blog/30171
 const today = new Date()
-document.getElementById("today").textContent = "今日の日付：" + today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate()
+document.getElementById("today").textContent =
+    "今日の日付：" +
+    today.getFullYear() +
+    "/" +
+    (today.getMonth() + 1) +
+    "/" +
+    today.getDate()

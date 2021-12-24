@@ -36,26 +36,19 @@ let today_youbi = "土曜日"
 //(TODD)全体の分量見て決める
 if (today_youbi === 1) {
     document.getElementById("day").innerText = "月曜日！！！"
-} 
-else if (today_youbi === 2) {
+} else if (today_youbi === 2) {
     document.getElementById("day").innerText = "火曜日！！！"
-}
-else if (today_youbi === 3) {
+} else if (today_youbi === 3) {
     document.getElementById("day").innerText = "水曜日！！！"
-}
-else if (today_youbi === 4) {
+} else if (today_youbi === 4) {
     document.getElementById("day").innerText = "木曜日！！！"
-}
-else if (today_youbi === 5) {
+} else if (today_youbi === 5) {
     document.getElementById("day").innerText = "金曜日！！！"
-}
-else if (today_youbi === 6) {
+} else if (today_youbi === 6) {
     document.getElementById("day").innerText = "土曜日！！！"
-}
-else if (today_youbi === 7) {
+} else if (today_youbi === 7) {
     document.getElementById("day").innerText = "日曜日！！！"
-}
-else {
+} else {
     document.getElementById("date").innerText = "Waffle Campではない日"
 }
 
